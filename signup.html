@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | SA Past Exams</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --sa-green: #00703C;
+            --sa-gold: #FFB81C;
+            --sa-red: #DE3831;
+            --sa-blue: #001A4E;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .auth-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .auth-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .auth-logo {
+            color: var(--sa-green);
+            font-weight: 700;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .auth-image {
+            background: linear-gradient(rgba(0, 112, 60, 0.8), rgba(0, 112, 60, 0.8)), 
+                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center;
+            background-size: cover;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .btn-sa-primary {
+            background-color: var(--sa-green);
+            color: white;
+        }
+        
+        .btn-sa-primary:hover {
+            background-color: #005a30;
+            color: white;
+        }
+        
+        .form-control:focus {
+            border-color: var(--sa-gold);
+            box-shadow: 0 0 0 0.25rem rgba(255, 184, 28, 0.25);
+        }
+        
+        .auth-footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: #6c757d;
+        }
+        
+        .progress {
+            height: 8px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .progress-bar {
+            background-color: var(--sa-green);
+        }
+        
+        .password-strength {
+            font-size: 0.85rem;
+        }
+        
+        .strength-weak {
+            color: var(--sa-red);
+        }
+        
+        .strength-medium {
+            color: #ffc107;
+        }
+        
+        .strength-strong {
+            color: var(--sa-green);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--sa-green);">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">SA Past Exams</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="signup.html">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container my-auto py-5">
+        <div class="row">
+            <div class="col-lg-6 d-none d-lg-block">
+                <div class="auth-image rounded-3 h-100 d-flex flex-column justify-content-center">
+                    <h2 class="display-5 fw-bold mb-4">Join Our Community!</h2>
+                    <p class="lead">Access thousands of past exam papers to help you prepare for your tests and exams.</p>
+                    <div class="mt-4">
+                        <p>Already have an account?</p>
+                        <a href="login.html" class="btn btn-outline-light btn-lg">Login</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="auth-container">
+                    <div class="auth-header">
+                        <div class="auth-logo">
+                            <i class="bi bi-journal-bookmark-fill"></i> SA Past Exams
+                        </div>
+                        <h2>Create your account</h2>
+                        <p class="text-muted">Get started with your free account</p>
+                    </div>
+                    
+                    <form id="signupForm" novalidate>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" required>
+                                <div class="invalid-feedback">
+                                    Please enter your first name.
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" required>
+                                <div class="invalid-feedback">
+                                    Please enter your last name.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="input-group mb-1">
+                                <input type="password" class="form-control" id="password" required
+                                       pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                                <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                            </div>
+                            <div class="password-strength">
+                                <div class="progress mt-2">
+                                    <div class="progress-bar" id="passwordStrengthBar" role="progressbar" style="width: 0%"></div>
+                                </div>
+                                <span id="passwordStrengthText">Password strength</span>
+                            </div>
+                            <div class="invalid-feedback">
+                                Password must contain at least 8 characters, including uppercase, lowercase and numbers.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" required>
+                            <div class="invalid-feedback">
+                                Passwords must match.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="gradeLevel" class="form-label">Grade Level</label>
+                            <select class="form-select" id="gradeLevel" required>
+                                <option value="" selected disabled>Select your grade</option>
+                                <option value="7">Grade 7</option>
+                                <option value="8">Grade 8</option>
+                                <option value="9">Grade 9</option>
+                                <option value="10">Grade 10</option>
+                                <option value="11">Grade 11</option>
+                                <option value="12">Grade 12</option>
+                                <option value="teacher">Teacher/Educator</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select your grade level.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="province" class="form-label">Province</label>
+                            <select class="form-select" id="province" required>
+                                <option value="" selected disabled>Select your province</option>
+                                <option value="EC">Eastern Cape</option>
+                                <option value="FS">Free State</option>
+                                <option value="GP">Gauteng</option>
+                                <option value="KZN">KwaZulu-Natal</option>
+                                <option value="LP">Limpopo</option>
+                                <option value="MP">Mpumalanga</option>
+                                <option value="NW">North West</option>
+                                <option value="NC">Northern Cape</option>
+                                <option value="WC">Western Cape</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select your province.
+                            </div>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                            <label class="form-check-label" for="termsCheck">
+                                I agree to the <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                            </label>
+                            <div class="invalid-feedback">
+                                You must agree before submitting.
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-sa-primary btn-lg">
+                                <i class="bi bi-person-plus"></i> Create Account
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div class="auth-footer">
+                        <p>Already have an account? <a href="login.html">Log in here</a></p>
+                        <div class="social-login mt-4">
+                            <p class="text-muted">Or sign up with:</p>
+                            <a href="#" class="btn btn-outline-secondary me-2">
+                                <i class="bi bi-google"></i>
+                            </a>
+                            <a href="#" class="btn btn-outline-secondary me-2">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="#" class="btn btn-outline-secondary">
+                                <i class="bi bi-microsoft"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms Modal -->
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="termsModalLabel">Terms of Service</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>1. Acceptance of Terms</h6>
+                    <p>By accessing or using SA Past Exams, you agree to be bound by these Terms of Service.</p>
+                    
+                    <h6>2. User Accounts</h6>
+                    <p>You must provide accurate information when creating an account and are responsible for maintaining the confidentiality of your credentials.</p>
+                    
+                    <h6>3. Content Usage</h6>
+                    <p>All exam papers and resources are provided for personal, non-commercial use only. Redistribution or commercial use is prohibited.</p>
+                    
+                    <h6>4. Privacy</h6>
+                    <p>Your personal information will be handled in accordance with our Privacy Policy.</p>
+                    
+                    <h6>5. Limitation of Liability</h6>
+                    <p>SA Past Exams is not responsible for any errors in content or any outcomes resulting from the use of our materials.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-4 mt-auto" style="background-color: var(--sa-blue); color: white;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>SA Past Exams</h5>
+                    <p>Comprehensive collection of past exam papers for South African learners in Grades 7-12.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="about.html" class="text-white">About</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Legal</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Terms</a></li>
+                        <li><a href="#" class="text-white">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 SA Past Exams. Not affiliated with the DBE.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Signup Form Validation -->
+    <script>
+        // Form validation
+        (function () {
+            'use strict'
+            
+            // Fetch the form we want to apply custom Bootstrap validation styles to
+            const form = document.getElementById('signupForm')
+            const password = document.getElementById('password')
+            const confirmPassword = document.getElementById('confirmPassword')
+            const togglePassword = document.getElementById('togglePassword')
+            const passwordStrengthBar = document.getElementById('passwordStrengthBar')
+            const passwordStrengthText = document.getElementById('passwordStrengthText')
+            
+            // Toggle password visibility
+            togglePassword.addEventListener('click', function () {
+                const type = password.getAttribute('type') === 'password' ? 'text' : 'password'
+                password.setAttribute('type', type)
+                confirmPassword.setAttribute('type', type)
+                this.innerHTML = type === 'password' ? '<i class="bi bi-eye"></i>' : '<i class="bi bi-eye-slash"></i>'
+            })
+            
+            // Password strength checker
+            password.addEventListener('input', function() {
+                const strength = calculatePasswordStrength(this.value)
+                passwordStrengthBar.style.width = strength.percentage + '%'
+                passwordStrengthBar.className = 'progress-bar ' + strength.class
+                passwordStrengthText.textContent = strength.text
+                passwordStrengthText.className = 'password-strength ' + strength.class
+            })
+            
+            // Confirm password validation
+            confirmPassword.addEventListener('input', function() {
+                if (this.value !== password.value) {
+                    this.setCustomValidity("Passwords must match")
+                } else {
+                    this.setCustomValidity("")
+                }
+            })
+            
+            // Form submission
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                } else {
+                    // Here you would typically handle the actual signup
+                    event.preventDefault()
+                    alert('Account creation would be processed here! Redirecting to dashboard...')
+                    // window.location.href = 'dashboard.html'
+                }
+                
+                form.classList.add('was-validated')
+            }, false)
+            
+            // Password strength calculation
+            function calculatePasswordStrength(password) {
+                let strength = 0
+                const hasUpperCase = /[A-Z]/.test(password)
+                const hasLowerCase = /[a-z]/.test(password)
+                const hasNumbers = /\d/.test(password)
+                const hasSpecialChars = /[!@#$%^&*(),.?":{}|<>]/.test(password)
+                
+                if (password.length > 0) strength += 10
+                if (password.length >= 8) strength += 20
+                if (password.length >= 12) strength += 20
+                if (hasUpperCase) strength += 15
+                if (hasLowerCase) strength += 15
+                if (hasNumbers) strength += 15
+                if (hasSpecialChars) strength += 15
+                
+                strength = Math.min(strength, 100)
+                
+                if (strength < 40) {
+                    return {
+                        percentage: strength,
+                        class: 'strength-weak',
+                        text: 'Weak password'
+                    }
+                } else if (strength < 70) {
+                    return {
+                        percentage: strength,
+                        class: 'strength-medium',
+                        text: 'Medium strength'
+                    }
+                } else {
+                    return {
+                        percentage: strength,
+                        class: 'strength-strong',
+                        text: 'Strong password'
+                    }
+                }
+            }
+        })()
+    </script>
+</body>
+</html>
