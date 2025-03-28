@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | SA Past Exams</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --sa-green: #00703C;
+            --sa-gold: #FFB81C;
+            --sa-red: #DE3831;
+            --sa-blue: #001A4E;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .auth-container {
+            max-width: 500px;
+            margin: auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .auth-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .auth-logo {
+            color: var(--sa-green);
+            font-weight: 700;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .auth-image {
+            background: linear-gradient(rgba(0, 112, 60, 0.8), rgba(0, 112, 60, 0.8)), 
+                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center;
+            background-size: cover;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .btn-sa-primary {
+            background-color: var(--sa-green);
+            color: white;
+        }
+        
+        .btn-sa-primary:hover {
+            background-color: #005a30;
+            color: white;
+        }
+        
+        .form-control:focus {
+            border-color: var(--sa-gold);
+            box-shadow: 0 0 0 0.25rem rgba(255, 184, 28, 0.25);
+        }
+        
+        .auth-footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--sa-green);">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">SA Past Exams</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container my-auto py-5">
+        <div class="row">
+            <div class="col-lg-6 d-none d-lg-block">
+                <div class="auth-image rounded-3 h-100 d-flex flex-column justify-content-center">
+                    <h2 class="display-5 fw-bold mb-4">Welcome Back!</h2>
+                    <p class="lead">Access thousands of past exam papers to help you prepare for your tests and exams.</p>
+                    <div class="mt-4">
+                        <p>Don't have an account yet?</p>
+                        <a href="signup.html" class="btn btn-outline-light btn-lg">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="auth-container">
+                    <div class="auth-header">
+                        <div class="auth-logo">
+                            <i class="bi bi-journal-bookmark-fill"></i> SA Past Exams
+                        </div>
+                        <h2>Sign in to your account</h2>
+                        <p class="text-muted">Enter your credentials to access your resources</p>
+                    </div>
+                    
+                    <form id="loginForm" novalidate>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="password" required>
+                                <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                            </div>
+                            <div class="invalid-feedback">
+                                Please enter your password.
+                            </div>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-sa-primary btn-lg">
+                                <i class="bi bi-box-arrow-in-right"></i> Sign In
+                            </button>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="forgot-password.html">Forgot your password?</a>
+                        </div>
+                    </form>
+                    
+                    <div class="auth-footer">
+                        <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+                        <div class="social-login mt-4">
+                            <p class="text-muted">Or sign in with:</p>
+                            <a href="#" class="btn btn-outline-secondary me-2">
+                                <i class="bi bi-google"></i>
+                            </a>
+                            <a href="#" class="btn btn-outline-secondary me-2">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="#" class="btn btn-outline-secondary">
+                                <i class="bi bi-microsoft"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-4 mt-auto" style="background-color: var(--sa-blue); color: white;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>SA Past Exams</h5>
+                    <p>Comprehensive collection of past exam papers for South African learners in Grades 7-12.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="about.html" class="text-white">About</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Legal</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Terms</a></li>
+                        <li><a href="#" class="text-white">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 SA Past Exams. Not affiliated with the DBE.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Login Form Validation -->
+    <script>
+        // Form validation
+        (function () {
+            'use strict'
+            
+            // Fetch the form we want to apply custom Bootstrap validation styles to
+            const form = document.getElementById('loginForm')
+            
+            // Toggle password visibility
+            const togglePassword = document.getElementById('togglePassword')
+            const password = document.getElementById('password')
+            
+            togglePassword.addEventListener('click', function () {
+                const type = password.getAttribute('type') === 'password' ? 'text' : 'password'
+                password.setAttribute('type', type)
+                this.innerHTML = type === 'password' ? '<i class="bi bi-eye"></i>' : '<i class="bi bi-eye-slash"></i>'
+            })
+            
+            // Form submission
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                } else {
+                    // Here you would typically handle the actual login
+                    event.preventDefault()
+                    alert('Login would be processed here! Redirecting to dashboard...')
+                    // window.location.href = 'dashboard.html'
+                }
+                
+                form.classList.add('was-validated')
+            }, false)
+        })()
+    </script>
+</body>
+</html>

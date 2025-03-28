@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | SA Past Exams</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/bootstrap-4.0.0/bootstrap-4.0.0/dist/css/bootstrap.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --sa-green: #00703C;
+            --sa-gold: #FFB81C;
+            --sa-red: #DE3831;
+            --sa-blue: #001A4E;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+        }
+
+        .hero-about {
+            background: linear-gradient(rgba(0, 112, 60, 0.9), rgba(0, 112, 60, 0.9)),
+                url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 5rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .about-card {
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            height: 100%;
+            border: none;
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid var(--sa-gold);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--sa-green);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--sa-red);
+            border: 3px solid var(--sa-green);
+        }
+
+        .value-card {
+            border-left: 4px solid var(--sa-green);
+            transition: all 0.3s;
+        }
+
+        .value-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--sa-green);">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">SA Past Exams</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <a href="login.html" class="btn btn-outline-warning">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-about text-center">
+        <div class="container py-5">
+            <h1 class="display-4 fw-bold mb-3">About SA Past Exams</h1>
+            <p class="lead mb-4">Empowering South African learners through accessible education</p>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="container my-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4">
+                <h2 class="fw-bold mb-4">Our Story</h2>
+                <p>Founded in 2015 by a group of passionate educators in Johannesburg, SA Past Exams began as a small
+                    initiative to help underprivileged students access quality study materials.</p>
+                <p>What started as a shared Google Drive among teachers has grown into South Africa's most comprehensive
+                    online repository of past exam papers, serving over 50,000 learners nationwide.</p>
+                <p>Today, we partner with schools across all nine provinces to collect, verify, and distribute
+                    curriculum-aligned resources to help students excel in their exams.</p>
+                <a href="#" class="btn btn-success mt-3">Learn About Our Impact</a>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80"
+                    alt="Students studying together" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-5" style="background-color: #e9f5ef;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="about-card p-4 h-100 bg-white">
+                        <div class="text-center mb-4">
+                            <i class="bi bi-bullseye fs-1 text-success"></i>
+                        </div>
+                        <h3 class="text-center fw-bold mb-3">Our Mission</h3>
+                        <p class="text-center">To democratize access to quality educational resources for all South
+                            African learners, regardless of their socioeconomic background or geographic location.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="about-card p-4 h-100 bg-white">
+                        <div class="text-center mb-4">
+                            <i class="bi bi-eye fs-1 text-success"></i>
+                        </div>
+                        <h3 class="text-center fw-bold mb-3">Our Vision</h3>
+                        <p class="text-center">A South Africa where every learner has equal opportunity to excel
+                            academically through access to comprehensive, curriculum-aligned study materials.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="container my-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Our Core Values</h2>
+            <p class="lead">The principles that guide everything we do</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="value-card p-4 h-100 bg-white">
+                    <h4 class="fw-bold"><i class="bi bi-people-fill text-success me-2"></i> Accessibility</h4>
+                    <p>We believe education should be available to all. That's why all our resources are completely
+                        free, with no hidden costs or premium paywalls.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="value-card p-4 h-100 bg-white">
+                    <h4 class="fw-bold"><i class="bi bi-check-circle-fill text-success me-2"></i> Quality</h4>
+                    <p>Every exam paper is carefully reviewed by our team of educators to ensure accuracy and alignment
+                        with the CAPS curriculum.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="value-card p-4 h-100 bg-white">
+                    <h4 class="fw-bold"><i class="bi bi-heart-fill text-success me-2"></i> Community</h4>
+                    <p>We're built by educators for learners. Our platform thrives on contributions from teachers across
+                        South Africa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="py-5" style="background-color: var(--sa-blue); color: white;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Our Journey</h2>
+                <p class="lead">Milestones in our educational mission</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4 class="fw-bold">2015 - Humble Beginnings</h4>
+                    <p>Founded by three teachers sharing resources at a Johannesburg high school. Started with just 200
+                        exam papers.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4 class="fw-bold">2017 - First Website Launch</h4>
+                    <p>Launched our first online platform with 1,500 exam papers. Reached 5,000 users in the first year.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <h4 class="fw-bold">2019 - Provincial Expansion</h4>
+                    <p>Partnered with schools in all nine provinces. Content grew to over 10,000 verified exam papers.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <h4 class="fw-bold">2021 - Mobile App Launch</h4>
+                    <p>Released our Android and iOS apps, making resources accessible to learners without computers.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4 class="fw-bold">2023 - Current Reach</h4>
+                    <p>Now serving over 50,000 registered users with more than 15,000 exam papers and study resources.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="container my-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Meet Our Team</h2>
+            <p class="lead">The passionate educators behind SA Past Exams</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="text-center">
+                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Dr. Nomsa Khumalo" class="mb-3">
+                    <h4 class="fw-bold">Dr. Nomsa Khumalo</h4>
+                    <p class="text-success fw-bold">Founder & CEO</p>
+                    <p>Former Mathematics HOD with 18 years teaching experience. PhD in Education from Wits University.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center">
+                    <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Thabo Moloi" class="mb-3">
+                    <h4 class="fw-bold">Thabo Moloi</h4>
+                    <p class="text-success fw-bold">Content Director</p>
+                    <p>Curriculum specialist with a focus on STEM subjects. Former provincial education department
+                        official.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center">
+                    <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Lerato Mbeki" class="mb-3">
+                    <h4 class="fw-bold">Lerato Mbeki</h4>
+                    <p class="text-success fw-bold">Technology Lead</p>
+                    <p>Software developer passionate about educational technology. Built our mobile app platform.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="contact.html" class="btn btn-outline-success btn-lg">Join Our Team</a>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Our Partners</h2>
+                <p class="lead">Collaborating to improve education in South Africa</p>
+            </div>
+
+            <div class="row g-4 justify-content-center align-items-center">
+                <div class="col-6 col-md-3">
+                    <img src="https://via.placeholder.com/150x80?text=DBE" alt="Department of Basic Education"
+                        class="img-fluid">
+                </div>
+                <div class="col-6 col-md-3">
+                    <img src="https://via.placeholder.com/150x80?text=UNICEF" alt="UNICEF" class="img-fluid">
+                </div>
+                <div class="col-6 col-md-3">
+                    <img src="https://via.placeholder.com/150x80?text=MTN+SA" alt="MTN South Africa" class="img-fluid">
+                </div>
+                <div class="col-6 col-md-3">
+                    <img src="https://via.placeholder.com/150x80?text=TEACH+SA" alt="Teach South Africa"
+                        class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 text-center" style="background-color: var(--sa-green); color: white;">
+        <div class="container">
+            <h2 class="fw-bold mb-4">Ready to access quality exam resources?</h2>
+            <p class="lead mb-4">Join thousands of South African learners improving their grades</p>
+            <a href="index.html" class="btn btn-warning btn-lg px-4 me-3">Browse Exams</a>
+            <a href="contact.html" class="btn btn-outline-light btn-lg px-4">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4" style="background-color: var(--sa-blue); color: white;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h5>SA Past Exams</h5>
+                    <p>Comprehensive collection of past exam papers for South African learners in Grades 7-12.</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-5"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-twitter fs-5"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-instagram fs-5"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-linkedin fs-5"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white">About Us</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-white">Contact</a></li>
+                        <li><a href="#" class="text-white">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Legal</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white">Terms of Service</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-white">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">&copy; 2023 SA Past Exams. Not affiliated with the DBE.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
