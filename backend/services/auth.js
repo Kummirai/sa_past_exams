@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
-require('dotenv').config();
+const { logger } = require('../utils/logger');
 
-const generateToken = (userId, role) => {
+exports.generateToken = (userId, role) => {
   return jwt.sign(
     { userId, role },
     process.env.JWT_SECRET,
@@ -9,24 +9,11 @@ const generateToken = (userId, role) => {
   );
 };
 
-const verifyToken = (token) => {
+exports.verifyToken = (token) => {
   try {
     return jwt.verify(token, process.env.JWT_SECRET);
   } catch (error) {
+    logger.error('Token verification failed:', error);
     return null;
   }
-};
-
-const decodeToken = (token) => {
-  try {
-    return jwt.decode(token);
-  } catch (error) {
-    return null;
-  }
-};
-
-module.exports = {
-  generateToken,
-  verifyToken,
-  decodeToken
 };
