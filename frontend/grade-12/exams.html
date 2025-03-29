@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade 12 Exam Papers | SA Exam Browser</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .breadcrumb {
+            background-color: #f8f9fa;
+            padding: 8px 15px;
+        }
+        .subject-header {
+            border-left: 4px solid #007bff;
+            padding-left: 10px;
+        }
+        .paper-card {
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+        .paper-card:hover {
+            transform: translateX(5px);
+            border-left-color: #007bff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .badge-year {
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation (same as main page) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-graduation-cap me-2"></i>SA Exam Browser
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Past Papers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Study Guides</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Curriculum</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search Grade 7...">
+                    <button class="btn btn-light" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Past Papers</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Grade 7</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Page Header -->
+    <div class="container my-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <h1 class="mb-0">Grade 12 Exam Papers</h1>
+                <p class="lead">Senior Phase - CAPS Curriculum</p>
+            </div>
+            <div>
+                <span class="badge bg-primary fs-6">Senior Phase</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container my-4">
+        <!-- Subjects Accordion -->
+        <div class="accordion" id="subjectsAccordion">
+            <!-- English Home Language -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingEnglish">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEnglish" aria-expanded="true" aria-controls="collapseEnglish">
+                        <i class="fas fa-language me-2 text-primary"></i> English Home Language
+                    </button>
+                </h2>
+                <div id="collapseEnglish" class="accordion-collapse collapse show" aria-labelledby="headingEnglish" data-bs-parent="#subjectsAccordion">
+                    <div class="accordion-body">
+                        <div class="paper-card mb-3 p-3 border rounded">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="mb-1">November 2023 Exam</h5>
+                                    <p class="mb-1 text-muted">Paper 1: Language in Context</p>
+                                    <span class="badge bg-primary badge-year">2023</span>
+                                    <span class="badge bg-secondary badge-year">Term 4</span>
+                                </div>
+                                <div>
+                                    <a href="#" class="btn btn-sm btn-outline-danger me-1">
+                                        <i class="fas fa-file-pdf"></i> Paper
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-success me-1">
+                                        <i class="fas fa-file-pdf"></i> Memo
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paper-card mb-3 p-3 border rounded">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="mb-1">June 2023 Exam</h5>
+                                    <p class="mb-1 text-muted">Paper 2: Literature</p>
+                                    <span class="badge bg-primary badge-year">2023</span>
+                                    <span class="badge bg-secondary badge-year">Term 2</span>
+                                </div>
+                                <div>
+                                    <a href="#" class="btn btn-sm btn-outline-danger me-1">
+                                        <i class="fas fa-file-pdf"></i> Paper
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-success me-1">
+                                        <i class="fas fa-file-pdf"></i> Memo
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paper-card mb-3 p-3 border rounded">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="mb-1">November 2022 Exam</h5>
+                                    <p class="mb-1 text-muted">Paper 1: Language in Context</p>
+                                    <span class="badge bg-primary badge-year">2022</span>
+                                    <span class="badge bg-secondary badge-year">Term 4</span>
+                                </div>
+                                <div>
+                                    <a href="#" class="btn btn-sm btn-outline-danger me-1">
+                                        <i class="fas fa-file-pdf"></i> Paper
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-success me-1">
+                                        <i class="fas fa-file-pdf"></i> Memo
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline-primary">View all English papers</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mathematics -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingMaths">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMaths" aria-expanded="false" aria-controls="collapseMaths">
+                        <i class="fas fa-square-root-alt me-2 text-danger"></i> Mathematics
+                    </button>
+                </h2>
+                <div id="collapseMaths" class="accordion-collapse collapse" aria-labelledby="headingMaths" data-bs-parent="#subjectsAccordion">
+                    <div class="accordion-body">
+                        <div class="paper-card mb-3 p-3 border rounded">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="mb-1">November 2023 Exam</h5>
+                                    <p class="mb-1 text-muted">Paper 1 & 2</p>
+                                    <span class="badge bg-primary badge-year">2023</span>
+                                    <span class="badge bg-secondary badge-year">Term 4</span>
+                                </div>
+                                <div>
+                                    <a href="#" class="btn btn-sm btn-outline-danger me-1">
+                                        <i class="fas fa-file-pdf"></i> Paper 1
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-danger me-1">
+                                        <i class="fas fa-file-pdf"></i> Paper 2
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-success me-1">
+                                        <i class="fas fa-file-pdf"></i> Memo
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paper-card mb-3 p-3 border rounded">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="mb-1">June 2023 Exam</h5>
+                                    <p class="mb-1 text-muted">Paper 1 & 2</p>
+                                    <span class="badge bg-primary badge-year">2023</span>
+                                    <span class="badge bg-secondary badge-year">Term 2</span>
+                                </div>
+                                <div>
+                                    <a href="#" class="btn btn-sm btn-outline-danger me-1">
+                                        <i class="fas fa-file-pdf"></i> Paper 1
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-danger me-1">
+                                        <i class="fas fa-file-pdf"></i> Paper 2
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-success me-1">
+                                        <i class="fas fa-file-pdf"></i> Memo
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline-danger">View all Mathematics papers</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Natural Sciences -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingScience">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseScience" aria-expanded="false" aria-controls="collapseScience">
+                        <i class="fas fa-flask me-2 text-success"></i> Natural Sciences
+                    </button>
+                </h2>
+                <div id="collapseScience" class="accordion-collapse collapse" aria-labelledby="headingScience" data-bs-parent="#subjectsAccordion">
+                    <div class="accordion-body">
+                        <div class="paper-card mb-3 p-3 border rounded">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="mb-1">November 2023 Exam</h5>
+                                    <p class="mb-1 text-muted">Term 4 Examination</p>
+                                    <span class="badge bg-primary badge-year">2023</span>
+                                    <span class="badge bg-secondary badge-year">Term 4</span>
+                                </div>
+                                <div>
+                                    <a href="#" class="btn btn-sm btn-outline-danger me-1">
+                                        <i class="fas fa-file-pdf"></i> Paper
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-success me-1">
+                                        <i class="fas fa-file-pdf"></i> Memo
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paper-card mb-3 p-3 border rounded">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="mb-1">June 2023 Exam</h5>
+                                    <p class="mb-1 text-muted">Term 2 Examination</p>
+                                    <span class="badge bg-primary badge-year">2023</span>
+                                    <span class="badge bg-secondary badge-year">Term 2</span>
+                                </div>
+                                <div>
+                                    <a href="#" class="btn btn-sm btn-outline-danger me-1">
+                                        <i class="fas fa-file-pdf"></i> Paper
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-success me-1">
+                                        <i class="fas fa-file-pdf"></i> Memo
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline-success">View all Natural Sciences papers</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Sciences -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSocial">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSocial" aria-expanded="false" aria-controls="collapseSocial">
+                        <i class="fas fa-globe-africa me-2 text-warning"></i> Social Sciences
+                    </button>
+                </h2>
+                <div id="collapseSocial" class="accordion-collapse collapse" aria-labelledby="headingSocial" data-bs-parent="#subjectsAccordion">
+                    <div class="accordion-body">
+                        <div class="paper-card mb-3 p-3 border rounded">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="mb-1">November 2023 Exam</h5>
+                                    <p class="mb-1 text-muted">History & Geography</p>
+                                    <span class="badge bg-primary badge-year">2023</span>
+                                    <span class="badge bg-secondary badge-year">Term 4</span>
+                                </div>
+                                <div>
+                                    <a href="#" class="btn btn-sm btn-outline-danger me-1">
+                                        <i class="fas fa-file-pdf"></i> Paper
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-success me-1">
+                                        <i class="fas fa-file-pdf"></i> Memo
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline-warning">View all Social Sciences papers</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTech">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTech" aria-expanded="false" aria-controls="collapseTech">
+                        <i class="fas fa-laptop-code me-2 text-info"></i> Technology
+                    </button>
+                </h2>
+                <div id="collapseTech" class="accordion-collapse collapse" aria-labelledby="headingTech" data-bs-parent="#subjectsAccordion">
+                    <div class="accordion-body">
+                        <div class="paper-card mb-3 p-3 border rounded">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="mb-1">November 2023 Exam</h5>
+                                    <p class="mb-1 text-muted">Term 4 Practical</p>
+                                    <span class="badge bg-primary badge-year">2023</span>
+                                    <span class="badge bg-secondary badge-year">Term 4</span>
+                                </div>
+                                <div>
+                                    <a href="#" class="btn btn-sm btn-outline-danger me-1">
+                                        <i class="fas fa-file-pdf"></i> Paper
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-success me-1">
+                                        <i class="fas fa-file-pdf"></i> Memo
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline-info">View all Technology papers</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Creative Arts -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingArts">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseArts" aria-expanded="false" aria-controls="collapseArts">
+                        <i class="fas fa-paint-brush me-2 text-purple"></i> Creative Arts
+                    </button>
+                </h2>
+                <div id="collapseArts" class="accordion-collapse collapse" aria-labelledby="headingArts" data-bs-parent="#subjectsAccordion">
+                    <div class="accordion-body">
+                        <div class="paper-card mb-3 p-3 border rounded">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="mb-1">November 2023 Exam</h5>
+                                    <p class="mb-1 text-muted">Practical Assessment</p>
+                                    <span class="badge bg-primary badge-year">2023</span>
+                                    <span class="badge bg-secondary badge-year">Term 4</span>
+                                </div>
+                                <div>
+                                    <a href="#" class="btn btn-sm btn-outline-danger me-1">
+                                        <i class="fas fa-file-pdf"></i> Paper
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-success me-1">
+                                        <i class="fas fa-file-pdf"></i> Memo
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline-purple">View all Creative Arts papers</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Resources -->
+        <div class="card mt-4">
+            <div class="card-header bg-light">
+                <h5 class="mb-0">Additional Grade 7 Resources</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-book me-2 text-primary"></i> Study Guides</h5>
+                                <p class="card-text">Comprehensive study guides for all Grade 7 subjects.</p>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Browse Guides</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-calendar-alt me-2 text-success"></i> Exam Timetable</h5>
+                                <p class="card-text">2023-2024 examination schedule for Grade 7.</p>
+                                <a href="#" class="btn btn-sm btn-outline-success">View Timetable</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-chalkboard-teacher me-2 text-warning"></i> Teacher Resources</h5>
+                                <p class="card-text">Lesson plans and teaching materials for educators.</p>
+                                <a href="#" class="btn btn-sm btn-outline-warning">View Resources</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (same as main page) -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>SA Exam Browser</h5>
+                    <p>Providing access to South African curriculum exam papers and study materials for Grades 7-12.</p>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Grades</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="grade7.html" class="text-white-50">Grade 7</a></li>
+                        <li><a href="grade8.html" class="text-white-50">Grade 8</a></li>
+                        <li><a href="grade9.html" class="text-white-50">Grade 9</a></li>
+                        <li><a href="grade10.html" class="text-white-50">Grade 10</a></li>
+                        <li><a href="grade11.html" class="text-white-50">Grade 11</a></li>
+                        <li><a href="grade12.html" class="text-white-50">Grade 12</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50">Past Papers</a></li>
+                        <li><a href="#" class="text-white-50">Study Guides</a></li>
+                        <li><a href="#" class="text-white-50">Curriculum</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-envelope me-2"></i> info@saexambrowser.co.za</li>
+                        <li><i class="fas fa-phone me-2"></i> +27 12 345 6789</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2023 SA Exam Browser. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white-50 me-3">Privacy Policy</a>
+                    <a href="#" class="text-white-50">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
