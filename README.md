@@ -6,54 +6,6 @@
 
 A comprehensive collection of past exam papers for South African students from Grade 7 to Grade 12, covering all major subjects.
 
-## 📂 Repository Structure
-South-Africa-Past-Exams/
-│
-├── Grade-7/
-│ ├── Mathematics/
-│ │ ├── 2023-Paper-1.pdf
-│ │ ├── 2023-Paper-2.pdf
-│ │ └── Memos/
-│ ├── English/
-│ ├── Natural-Sciences/
-│ └── ...
-│
-├── Grade-8/
-│ ├── Mathematics/
-│ ├── English/
-│ ├── Natural-Sciences/
-│ └── ...
-│
-├── Grade-9/
-│ ├── Mathematics/
-│ ├── English/
-│ ├── Natural-Sciences/
-│ └── ...
-│
-├── Grade-10/
-│ ├── Mathematics/
-│ ├── English/
-│ ├── Physical-Sciences/
-│ ├── Life-Sciences/
-│ └── ...
-│
-├── Grade-11/
-│ ├── Mathematics/
-│ ├── English/
-│ ├── Physical-Sciences/
-│ ├── Life-Sciences/
-│ └── ...
-│
-└── Grade-12/
-├── Mathematics/
-│ ├── 2023-Paper-1.pdf
-│ ├── 2023-Paper-2.pdf
-│ └── Memos/
-├── English/
-├── Physical-Sciences/
-├── Life-Sciences/
-└── ...
-
 
 ## 📚 Available Subjects
 
