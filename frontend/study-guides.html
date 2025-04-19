@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Guides | SA Past Exams</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/bootstrap-4.0.0/bootstrap-4.0.0/dist/css/bootstrap.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --sa-green: #00703C;
+            --sa-gold: #FFB81C;
+            --sa-red: #DE3831;
+            --sa-blue: #001A4E;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0, 112, 60, 0.9), rgba(0, 112, 60, 0.9)),
+                url('https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 5rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .guide-card {
+            transition: transform 0.3s;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .guide-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .subject-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 0.8rem;
+        }
+
+        .grade-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 0.8rem;
+        }
+
+        .view-options {
+            margin-bottom: 2rem;
+        }
+
+        .view-options .nav-link {
+            color: var(--sa-blue);
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            margin: 0 0.5rem;
+        }
+
+        .view-options .nav-link.active {
+            background-color: var(--sa-green);
+            color: white;
+        }
+
+        .view-section {
+            display: none;
+        }
+
+        .view-section.active {
+            display: block;
+        }
+
+        .subject-category {
+            margin-bottom: 3rem;
+        }
+
+        .subject-category h3 {
+            border-bottom: 2px solid var(--sa-green);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--sa-green);">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">SA Past Exams</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="browse.html">Past Papers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="study-guides.html">Study Guides</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <a href="login.html" class="btn btn-outline-warning">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Comprehensive Study Guides</h1>
+            <p class="lead mb-4">CAPS-aligned study resources for Grades 7-12</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#view-options" class="btn btn-warning btn-lg px-4">Browse Guides</a>
+                <a href="#additional-resources" class="btn btn-outline-light btn-lg px-4">Additional Resources</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <!-- View Options -->
+        <section id="view-options" class="mb-5">
+            <div class="text-center mb-4">
+                <h2 class="mb-3">Browse Study Guides</h2>
+                <p class="lead">Choose how you'd like to view the study guides</p>
+            </div>
+            
+            <ul class="nav nav-pills justify-content-center view-options">
+                <li class="nav-item">
+                    <a class="nav-link active" id="byGradeTab" data-bs-toggle="pill" href="#byGrade">By Grade</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="bySubjectTab" data-bs-toggle="pill" href="#bySubject">By Subject</a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- By Grade View -->
+        <div class="tab-content">
+            <div class="tab-pane fade show active view-section" id="byGrade">
+                <!-- Grade 7 -->
+                <section id="grade7" class="mb-5">
+                    <h2 class="mb-4 border-bottom pb-2">Grade 7 Study Guides</h2>
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card guide-card h-100">
+                                <div class="card-body position-relative">
+                                    <span class="badge bg-primary grade-badge">Grade 7</span>
+                                    <span class="badge bg-success subject-badge">Mathematics</span>
+                                    <h4 class="card-title">Mathematics Complete Guide</h4>
+                                    <p class="card-text">Covers all Grade 7 topics: whole numbers, fractions, geometry, data handling, and more.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle text-success"></i> 150+ practice questions</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Step-by-step solutions</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Exam tips & tricks</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer bg-transparent">
+                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card guide-card h-100">
+                                <div class="card-body position-relative">
+                                    <span class="badge bg-primary grade-badge">Grade 7</span>
+                                    <span class="badge bg-info subject-badge">Natural Science</span>
+                                    <h4 class="card-title">Natural Science Mastery</h4>
+                                    <p class="card-text">Comprehensive coverage of life & living, matter & materials, energy and Earth & beyond.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle text-success"></i> Diagrams & illustrations</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Practical experiments guide</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Term summaries</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer bg-transparent">
+                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card guide-card h-100">
+                                <div class="card-body position-relative">
+                                    <span class="badge bg-primary grade-badge">Grade 7</span>
+                                    <span class="badge bg-warning subject-badge">English HL</span>
+                                    <h4 class="card-title">English Home Language Guide</h4>
+                                    <p class="card-text">Grammar, comprehension, writing skills and literature study for Grade 7.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle text-success"></i> Writing frameworks</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Comprehension strategies</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Vocabulary builder</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer bg-transparent">
+                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Grade 8 -->
+                <section id="grade8" class="mb-5">
+                    <h2 class="mb-4 border-bottom pb-2">Grade 8 Study Guides</h2>
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card guide-card h-100">
+                                <div class="card-body position-relative">
+                                    <span class="badge bg-primary grade-badge">Grade 8</span>
+                                    <span class="badge bg-success subject-badge">Mathematics</span>
+                                    <h4 class="card-title">Mathematics Complete Guide</h4>
+                                    <p class="card-text">Covers all Grade 8 topics: integers, algebraic expressions, geometry, functions, and more.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle text-success"></i> 200+ practice questions</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Worked examples</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Exam preparation tips</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer bg-transparent">
+                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card guide-card h-100">
+                                <div class="card-body position-relative">
+                                    <span class="badge bg-primary grade-badge">Grade 8</span>
+                                    <span class="badge bg-info subject-badge">Natural Science</span>
+                                    <h4 class="card-title">Natural Science Mastery</h4>
+                                    <p class="card-text">Comprehensive coverage of life & living, matter & materials, energy and Earth & beyond.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle text-success"></i> Scientific method guide</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Key concept summaries</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Diagrams & illustrations</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer bg-transparent">
+                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card guide-card h-100">
+                                <div class="card-body position-relative">
+                                    <span class="badge bg-primary grade-badge">Grade 8</span>
+                                    <span class="badge bg-danger subject-badge">Social Sciences</span>
+                                    <h4 class="card-title">History & Geography Guide</h4>
+                                    <p class="card-text">Complete coverage of both History and Geography curriculum for Grade 8.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle text-success"></i> Mapwork skills</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Historical source analysis</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Case studies</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer bg-transparent">
+                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Continue with other grades (9-12) similarly -->
+                <!-- ... -->
+
+            </div>
+
+            <!-- By Subject View -->
+            <div class="tab-pane fade view-section" id="bySubject">
+                <!-- Languages -->
+                <div class="subject-category">
+                    <h3>Languages</h3>
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card guide-card h-100">
+                                <div class="card-body position-relative">
+                                    <span class="badge bg-primary grade-badge">Gr7-9</span>
+                                    <span class="badge bg-warning subject-badge">English HL</span>
+                                    <h4 class="card-title">English Home Language Guide</h4>
+                                    <p class="card-text">Comprehensive guide covering grammar, comprehension, writing skills and literature study.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle text-success"></i> Writing frameworks</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Comprehension strategies</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Vocabulary builder</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer bg-transparent">
+                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card guide-card h-100">
+                                <div class="card-body position-relative">
+                                    <span class="badge bg-danger grade-badge">Gr10-12</span>
+                                    <span class="badge bg-warning subject-badge">English HL</span>
+                                    <h4 class="card-title">English Home Language Guide</h4>
+                                    <p class="card-text">Advanced guide covering literature analysis, writing techniques and exam preparation.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle text-success"></i> Essay writing techniques</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Poetry analysis</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Exam strategies</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer bg-transparent">
+                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card guide-card h-100">
+                                <div class="card-body position-relative">
+                                    <span class="badge bg-primary grade-badge">Gr7-9</span>
+                                    <span class="badge bg-secondary subject-badge">Afrikaans FAL</span>
+                                    <h4 class="card-title">Afrikaans First Additional Language</h4>
+                                    <p class="card-text">Comprehensive guide for Afrikaans as a first additional language.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle text-success"></i> Vocabulary lists</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Grammar rules</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Comprehension techniques</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer bg-transparent">
+                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mathematics -->
+                <div class="subject-category">
+                    <h3>Mathematics</h3>
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card guide-card h-100">
+                                <div class="card-body position-relative">
+                                    <span class="badge bg-primary grade-badge">Gr7-9</span>
+                                    <span class="badge bg-success subject-badge">Mathematics</span>
+                                    <h4 class="card-title">Mathematics Complete Guide</h4>
+                                    <p class="card-text">Covers all Senior Phase topics with worked examples and practice questions.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle text-success"></i> 500+ practice questions</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Step-by-step solutions</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Exam tips & tricks</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer bg-transparent">
+                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card guide-card h-100">
+                                <div class="card-body position-relative">
+                                    <span class="badge bg-danger grade-badge">Gr10-12</span>
+                                    <span class="badge bg-success subject-badge">Mathematics</span>
+                                    <h4 class="card-title">Mathematics Complete Guide</h4>
+                                    <p class="card-text">Comprehensive coverage of algebra, functions, trigonometry, calculus, and more.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle text-success"></i> 800+ practice questions</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Problem-solving strategies</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Exam walkthroughs</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer bg-transparent">
+                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card guide-card h-100">
+                                <div class="card-body position-relative">
+                                    <span class="badge bg-danger grade-badge">Gr10-12</span>
+                                    <span class="badge bg-success subject-badge">Maths Literacy</span>
+                                    <h4 class="card-title">Mathematical Literacy Guide</h4>
+                                    <p class="card-text">Practical applications of mathematics in everyday life for Grades 10-12.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle text-success"></i> Financial calculations</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Measurement techniques</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Data handling</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer bg-transparent">
+                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sciences -->
+                <div class="subject-category">
+                    <h3>Sciences</h3>
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card guide-card h-100">
+                                <div class="card-body position-relative">
+                                    <span class="badge bg-primary grade-badge">Gr7-9</span>
+                                    <span class="badge bg-info subject-badge">Natural Science</span>
+                                    <h4 class="card-title">Natural Science Mastery</h4>
+                                    <p class="card-text">Comprehensive coverage of life & living, matter & materials, energy and Earth & beyond.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle text-success"></i> Scientific investigations</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Key concept summaries</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Diagrams & illustrations</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer bg-transparent">
+                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card guide-card h-100">
+                                <div class="card-body position-relative">
+                                    <span class="badge bg-danger grade-badge">Gr10-12</span>
+                                    <span class="badge bg-info subject-badge">Physical Science</span>
+                                    <h4 class="card-title">Physical Science Mastery</h4>
+                                    <p class="card-text">Comprehensive coverage of Physics and Chemistry for Grades 10-12.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle text-success"></i> Practical experiments</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Formula sheets</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Problem-solving techniques</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer bg-transparent">
+                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card guide-card h-100">
+                                <div class="card-body position-relative">
+                                    <span class="badge bg-danger grade-badge">Gr10-12</span>
+                                    <span class="badge bg-info subject-badge">Life Sciences</span>
+                                    <h4 class="card-title">Life Sciences Guide</h4>
+                                    <p class="card-text">Comprehensive coverage of biodiversity, cellular processes, and human physiology.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle text-success"></i> Diagrams & illustrations</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Key concept summaries</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Practical investigations</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer bg-transparent">
+                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Continue with other subject categories similarly -->
+                <!-- ... -->
+
+            </div>
+        </div>
+
+        <!-- Additional Resources -->
+        <section id="additional-resources" class="mb-5">
+            <h2 class="mb-4 border-bottom pb-2">Additional Study Resources</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card guide-card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title">Exam Preparation Guide</h4>
+                            <p class="card-text">Strategies for effective studying, time management, and exam techniques.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle text-success"></i> Study schedules</li>
+                                <li><i class="bi bi-check-circle text-success"></i> Memory techniques</li>
+                                <li><i class="bi bi-check-circle text-success"></i> Stress management</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <a href="#" class="btn btn-sm btn-success">Download PDF</a>
+                            <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card guide-card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title">Study Skills Handbook</h4>
+                            <p class="card-text">Learn how to study effectively with proven techniques and strategies.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle text-success"></i> Note-taking methods</li>
+                                <li><i class="bi bi-check-circle text-success"></i> Active reading techniques</li>
+                                <li><i class="bi bi-check-circle text-success"></i> Memory improvement</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <a href="#" class="btn btn-sm btn-success">Download PDF</a>
+                            <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card guide-card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title">Time Management Guide</h4>
+                            <p class="card-text">Master your schedule and maximize your study time effectively.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle text-success"></i> Planning techniques</li>
+                                <li><i class="bi bi-check-circle text-success"></i> Prioritization methods</li>
+                                <li><i class="bi bi-check-circle text-success"></i> Productivity tips</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <a href="#" class="btn btn-sm btn-success">Download PDF</a>
+                            <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-4" style="background-color: var(--sa-blue); color: white;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h5>SA Past Exams</h5>
+                    <p>Comprehensive collection of past exam papers and study guides for South African learners in Grades 7-12.</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-5"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-twitter fs-5"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-instagram fs-5"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-linkedin fs-5"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white">About Us</a></li>
+                        <li class="mb-2"><a href="browse.html" class="text-white">Past Papers</a></li>
+                        <li class="mb-2"><a href="study-guides.html" class="text-white">Study Guides</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Legal</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white">Terms of Service</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-white">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">&copy; 2023 SA Past Exams. Not affiliated with the DBE.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Store the current view preference
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check for saved view preference
+            const savedView = localStorage.getItem('studyGuideView');
+            if (savedView) {
+                const tab = document.querySelector(`#${savedView}Tab`);
+                if (tab) {
+                    tab.click();
+                }
+            }
+
+            // Save view preference when tabs are changed
+            document.querySelectorAll('.view-options .nav-link').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    localStorage.setItem('studyGuideView', this.id.replace('Tab', ''));
+                });
+            });
+
+            // Handle direct anchor links
+            if (window.location.hash === '#bySubject') {
+                document.querySelector('#bySubjectTab').click();
+            }
+        });
+    </script>
+</body>
+
+</html>
