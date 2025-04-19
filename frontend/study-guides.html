@@ -97,6 +97,65 @@
             padding-bottom: 0.5rem;
             margin-bottom: 1.5rem;
         }
+
+        .topic-accordion .accordion-button {
+            font-weight: 600;
+        }
+
+        .topic-accordion .accordion-button:not(.collapsed) {
+            background-color: rgba(0, 112, 60, 0.1);
+            color: var(--sa-green);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: auto;
+        }
+
+        .video-thumbnail .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--sa-green);
+            font-size: 24px;
+        }
+
+        .resource-badge {
+            font-size: 0.75rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .topic-resources {
+            margin-top: 1rem;
+        }
+
+        .modal-video {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .modal-video {
+                height: 250px;
+            }
+        }
     </style>
 </head>
 
@@ -135,10 +194,10 @@
     <section class="hero-section text-center">
         <div class="container">
             <h1 class="display-4 fw-bold mb-3">Comprehensive Study Guides</h1>
-            <p class="lead mb-4">CAPS-aligned study resources for Grades 7-12</p>
+            <p class="lead mb-4">CAPS-aligned study resources with topic breakdowns and video tutorials</p>
             <div class="d-flex justify-content-center gap-3">
                 <a href="#view-options" class="btn btn-warning btn-lg px-4">Browse Guides</a>
-                <a href="#additional-resources" class="btn btn-outline-light btn-lg px-4">Additional Resources</a>
+                <a href="#video-tutorials" class="btn btn-outline-light btn-lg px-4">Video Tutorials</a>
             </div>
         </div>
     </section>
@@ -165,65 +224,161 @@
         <!-- By Grade View -->
         <div class="tab-content">
             <div class="tab-pane fade show active view-section" id="byGrade">
-                <!-- Grade 7 -->
+                <!-- Grade 7 Example -->
                 <section id="grade7" class="mb-5">
                     <h2 class="mb-4 border-bottom pb-2">Grade 7 Study Guides</h2>
                     <div class="row g-4">
-                        <div class="col-lg-4 col-md-6">
+                        <div class="col-lg-6">
                             <div class="card guide-card h-100">
                                 <div class="card-body position-relative">
                                     <span class="badge bg-primary grade-badge">Grade 7</span>
                                     <span class="badge bg-success subject-badge">Mathematics</span>
                                     <h4 class="card-title">Mathematics Complete Guide</h4>
-                                    <p class="card-text">Covers all Grade 7 topics: whole numbers, fractions, geometry, data handling, and more.</p>
-                                    <ul class="list-unstyled">
-                                        <li><i class="bi bi-check-circle text-success"></i> 150+ practice questions</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Step-by-step solutions</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Exam tips & tricks</li>
-                                    </ul>
+                                    <p class="card-text">Covers all Grade 7 topics with detailed explanations and practice questions.</p>
+                                    
+                                    <div class="accordion accordion-flush topic-accordion" id="mathsGrade7Topics">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mathsGrade7Topic1">
+                                                    Whole Numbers
+                                                </button>
+                                            </h2>
+                                            <div id="mathsGrade7Topic1" class="accordion-collapse collapse" data-bs-parent="#mathsGrade7Topics">
+                                                <div class="accordion-body">
+                                                    <p>Understanding place value, operations, and problem solving with whole numbers.</p>
+                                                    <div class="topic-resources">
+                                                        <span class="badge bg-success resource-badge">PDF Guide</span>
+                                                        <span class="badge bg-danger resource-badge">Worksheet</span>
+                                                        <span class="badge bg-primary resource-badge">Video Tutorial</span>
+                                                        
+                                                        <div class="video-thumbnail mt-2" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="abcd1234">
+                                                            <img src="https://img.youtube.com/vi/abcd1234/mqdefault.jpg" alt="Whole Numbers Tutorial">
+                                                            <div class="play-button">
+                                                                <i class="bi bi-play-fill"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mathsGrade7Topic2">
+                                                    Fractions
+                                                </button>
+                                            </h2>
+                                            <div id="mathsGrade7Topic2" class="accordion-collapse collapse" data-bs-parent="#mathsGrade7Topics">
+                                                <div class="accordion-body">
+                                                    <p>Understanding, comparing, and operating with fractions.</p>
+                                                    <div class="topic-resources">
+                                                        <span class="badge bg-success resource-badge">PDF Guide</span>
+                                                        <span class="badge bg-danger resource-badge">Worksheet</span>
+                                                        <span class="badge bg-primary resource-badge">Video Tutorial</span>
+                                                        
+                                                        <div class="video-thumbnail mt-2" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="efgh5678">
+                                                            <img src="https://img.youtube.com/vi/efgh5678/mqdefault.jpg" alt="Fractions Tutorial">
+                                                            <div class="play-button">
+                                                                <i class="bi bi-play-fill"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mathsGrade7Topic3">
+                                                    Geometry
+                                                </button>
+                                            </h2>
+                                            <div id="mathsGrade7Topic3" class="accordion-collapse collapse" data-bs-parent="#mathsGrade7Topics">
+                                                <div class="accordion-body">
+                                                    <p>Properties of shapes, angles, and basic constructions.</p>
+                                                    <div class="topic-resources">
+                                                        <span class="badge bg-success resource-badge">PDF Guide</span>
+                                                        <span class="badge bg-danger resource-badge">Worksheet</span>
+                                                        <span class="badge bg-primary resource-badge">Video Tutorial</span>
+                                                        
+                                                        <div class="video-thumbnail mt-2" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="ijkl9012">
+                                                            <img src="https://img.youtube.com/vi/ijkl9012/mqdefault.jpg" alt="Geometry Tutorial">
+                                                            <div class="play-button">
+                                                                <i class="bi bi-play-fill"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="card-footer bg-transparent">
-                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
+                                    <a href="#" class="btn btn-sm btn-success">Download Full Guide</a>
                                     <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-6">
+                        <div class="col-lg-6">
                             <div class="card guide-card h-100">
                                 <div class="card-body position-relative">
                                     <span class="badge bg-primary grade-badge">Grade 7</span>
                                     <span class="badge bg-info subject-badge">Natural Science</span>
                                     <h4 class="card-title">Natural Science Mastery</h4>
                                     <p class="card-text">Comprehensive coverage of life & living, matter & materials, energy and Earth & beyond.</p>
-                                    <ul class="list-unstyled">
-                                        <li><i class="bi bi-check-circle text-success"></i> Diagrams & illustrations</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Practical experiments guide</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Term summaries</li>
-                                    </ul>
+                                    
+                                    <div class="accordion accordion-flush topic-accordion" id="scienceGrade7Topics">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#scienceGrade7Topic1">
+                                                    Life & Living
+                                                </button>
+                                            </h2>
+                                            <div id="scienceGrade7Topic1" class="accordion-collapse collapse" data-bs-parent="#scienceGrade7Topics">
+                                                <div class="accordion-body">
+                                                    <p>Biodiversity, interactions in environments, and life processes.</p>
+                                                    <div class="topic-resources">
+                                                        <span class="badge bg-success resource-badge">PDF Guide</span>
+                                                        <span class="badge bg-danger resource-badge">Worksheet</span>
+                                                        <span class="badge bg-primary resource-badge">Video Tutorial</span>
+                                                        
+                                                        <div class="video-thumbnail mt-2" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="mnop3456">
+                                                            <img src="https://img.youtube.com/vi/mnop3456/mqdefault.jpg" alt="Life & Living Tutorial">
+                                                            <div class="play-button">
+                                                                <i class="bi bi-play-fill"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#scienceGrade7Topic2">
+                                                    Matter & Materials
+                                                </button>
+                                            </h2>
+                                            <div id="scienceGrade7Topic2" class="accordion-collapse collapse" data-bs-parent="#scienceGrade7Topics">
+                                                <div class="accordion-body">
+                                                    <p>Properties of materials, acids and bases, and particle model of matter.</p>
+                                                    <div class="topic-resources">
+                                                        <span class="badge bg-success resource-badge">PDF Guide</span>
+                                                        <span class="badge bg-danger resource-badge">Worksheet</span>
+                                                        <span class="badge bg-primary resource-badge">Video Tutorial</span>
+                                                        
+                                                        <div class="video-thumbnail mt-2" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="qrst7890">
+                                                            <img src="https://img.youtube.com/vi/qrst7890/mqdefault.jpg" alt="Matter & Materials Tutorial">
+                                                            <div class="play-button">
+                                                                <i class="bi bi-play-fill"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="card-footer bg-transparent">
-                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card guide-card h-100">
-                                <div class="card-body position-relative">
-                                    <span class="badge bg-primary grade-badge">Grade 7</span>
-                                    <span class="badge bg-warning subject-badge">English HL</span>
-                                    <h4 class="card-title">English Home Language Guide</h4>
-                                    <p class="card-text">Grammar, comprehension, writing skills and literature study for Grade 7.</p>
-                                    <ul class="list-unstyled">
-                                        <li><i class="bi bi-check-circle text-success"></i> Writing frameworks</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Comprehension strategies</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Vocabulary builder</li>
-                                    </ul>
-                                </div>
-                                <div class="card-footer bg-transparent">
-                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
+                                    <a href="#" class="btn btn-sm btn-success">Download Full Guide</a>
                                     <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
                                 </div>
                             </div>
@@ -231,204 +386,143 @@
                     </div>
                 </section>
 
-                <!-- Grade 8 -->
-                <section id="grade8" class="mb-5">
-                    <h2 class="mb-4 border-bottom pb-2">Grade 8 Study Guides</h2>
-                    <div class="row g-4">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card guide-card h-100">
-                                <div class="card-body position-relative">
-                                    <span class="badge bg-primary grade-badge">Grade 8</span>
-                                    <span class="badge bg-success subject-badge">Mathematics</span>
-                                    <h4 class="card-title">Mathematics Complete Guide</h4>
-                                    <p class="card-text">Covers all Grade 8 topics: integers, algebraic expressions, geometry, functions, and more.</p>
-                                    <ul class="list-unstyled">
-                                        <li><i class="bi bi-check-circle text-success"></i> 200+ practice questions</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Worked examples</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Exam preparation tips</li>
-                                    </ul>
-                                </div>
-                                <div class="card-footer bg-transparent">
-                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card guide-card h-100">
-                                <div class="card-body position-relative">
-                                    <span class="badge bg-primary grade-badge">Grade 8</span>
-                                    <span class="badge bg-info subject-badge">Natural Science</span>
-                                    <h4 class="card-title">Natural Science Mastery</h4>
-                                    <p class="card-text">Comprehensive coverage of life & living, matter & materials, energy and Earth & beyond.</p>
-                                    <ul class="list-unstyled">
-                                        <li><i class="bi bi-check-circle text-success"></i> Scientific method guide</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Key concept summaries</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Diagrams & illustrations</li>
-                                    </ul>
-                                </div>
-                                <div class="card-footer bg-transparent">
-                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card guide-card h-100">
-                                <div class="card-body position-relative">
-                                    <span class="badge bg-primary grade-badge">Grade 8</span>
-                                    <span class="badge bg-danger subject-badge">Social Sciences</span>
-                                    <h4 class="card-title">History & Geography Guide</h4>
-                                    <p class="card-text">Complete coverage of both History and Geography curriculum for Grade 8.</p>
-                                    <ul class="list-unstyled">
-                                        <li><i class="bi bi-check-circle text-success"></i> Mapwork skills</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Historical source analysis</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Case studies</li>
-                                    </ul>
-                                </div>
-                                <div class="card-footer bg-transparent">
-                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Continue with other grades (9-12) similarly -->
+                <!-- Continue with other grades similarly -->
                 <!-- ... -->
-
             </div>
 
             <!-- By Subject View -->
             <div class="tab-pane fade view-section" id="bySubject">
-                <!-- Languages -->
-                <div class="subject-category">
-                    <h3>Languages</h3>
-                    <div class="row g-4">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card guide-card h-100">
-                                <div class="card-body position-relative">
-                                    <span class="badge bg-primary grade-badge">Gr7-9</span>
-                                    <span class="badge bg-warning subject-badge">English HL</span>
-                                    <h4 class="card-title">English Home Language Guide</h4>
-                                    <p class="card-text">Comprehensive guide covering grammar, comprehension, writing skills and literature study.</p>
-                                    <ul class="list-unstyled">
-                                        <li><i class="bi bi-check-circle text-success"></i> Writing frameworks</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Comprehension strategies</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Vocabulary builder</li>
-                                    </ul>
-                                </div>
-                                <div class="card-footer bg-transparent">
-                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card guide-card h-100">
-                                <div class="card-body position-relative">
-                                    <span class="badge bg-danger grade-badge">Gr10-12</span>
-                                    <span class="badge bg-warning subject-badge">English HL</span>
-                                    <h4 class="card-title">English Home Language Guide</h4>
-                                    <p class="card-text">Advanced guide covering literature analysis, writing techniques and exam preparation.</p>
-                                    <ul class="list-unstyled">
-                                        <li><i class="bi bi-check-circle text-success"></i> Essay writing techniques</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Poetry analysis</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Exam strategies</li>
-                                    </ul>
-                                </div>
-                                <div class="card-footer bg-transparent">
-                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card guide-card h-100">
-                                <div class="card-body position-relative">
-                                    <span class="badge bg-primary grade-badge">Gr7-9</span>
-                                    <span class="badge bg-secondary subject-badge">Afrikaans FAL</span>
-                                    <h4 class="card-title">Afrikaans First Additional Language</h4>
-                                    <p class="card-text">Comprehensive guide for Afrikaans as a first additional language.</p>
-                                    <ul class="list-unstyled">
-                                        <li><i class="bi bi-check-circle text-success"></i> Vocabulary lists</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Grammar rules</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Comprehension techniques</li>
-                                    </ul>
-                                </div>
-                                <div class="card-footer bg-transparent">
-                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mathematics -->
+                <!-- Mathematics Example -->
                 <div class="subject-category">
                     <h3>Mathematics</h3>
                     <div class="row g-4">
-                        <div class="col-lg-4 col-md-6">
+                        <div class="col-lg-6">
                             <div class="card guide-card h-100">
                                 <div class="card-body position-relative">
                                     <span class="badge bg-primary grade-badge">Gr7-9</span>
                                     <span class="badge bg-success subject-badge">Mathematics</span>
-                                    <h4 class="card-title">Mathematics Complete Guide</h4>
-                                    <p class="card-text">Covers all Senior Phase topics with worked examples and practice questions.</p>
-                                    <ul class="list-unstyled">
-                                        <li><i class="bi bi-check-circle text-success"></i> 500+ practice questions</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Step-by-step solutions</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Exam tips & tricks</li>
-                                    </ul>
+                                    <h4 class="card-title">Senior Phase Mathematics</h4>
+                                    <p class="card-text">Comprehensive guide covering all topics in the Senior Phase curriculum.</p>
+                                    
+                                    <div class="accordion accordion-flush topic-accordion" id="mathsSeniorTopics">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mathsSeniorTopic1">
+                                                    Algebra
+                                                </button>
+                                            </h2>
+                                            <div id="mathsSeniorTopic1" class="accordion-collapse collapse" data-bs-parent="#mathsSeniorTopics">
+                                                <div class="accordion-body">
+                                                    <p>Algebraic expressions, equations, and patterns for Grades 7-9.</p>
+                                                    <div class="topic-resources">
+                                                        <span class="badge bg-success resource-badge">PDF Guide</span>
+                                                        <span class="badge bg-danger resource-badge">Worksheet</span>
+                                                        <span class="badge bg-primary resource-badge">Video Tutorial</span>
+                                                        
+                                                        <div class="video-thumbnail mt-2" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="uvwx1234">
+                                                            <img src="https://img.youtube.com/vi/uvwx1234/mqdefault.jpg" alt="Algebra Tutorial">
+                                                            <div class="play-button">
+                                                                <i class="bi bi-play-fill"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mathsSeniorTopic2">
+                                                    Geometry
+                                                </button>
+                                            </h2>
+                                            <div id="mathsSeniorTopic2" class="accordion-collapse collapse" data-bs-parent="#mathsSeniorTopics">
+                                                <div class="accordion-body">
+                                                    <p>Properties of shapes, constructions, and transformations.</p>
+                                                    <div class="topic-resources">
+                                                        <span class="badge bg-success resource-badge">PDF Guide</span>
+                                                        <span class="badge bg-danger resource-badge">Worksheet</span>
+                                                        <span class="badge bg-primary resource-badge">Video Tutorial</span>
+                                                        
+                                                        <div class="video-thumbnail mt-2" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="yzab5678">
+                                                            <img src="https://img.youtube.com/vi/yzab5678/mqdefault.jpg" alt="Geometry Tutorial">
+                                                            <div class="play-button">
+                                                                <i class="bi bi-play-fill"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="card-footer bg-transparent">
-                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
+                                    <a href="#" class="btn btn-sm btn-success">Download Full Guide</a>
                                     <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-6">
+                        <div class="col-lg-6">
                             <div class="card guide-card h-100">
                                 <div class="card-body position-relative">
                                     <span class="badge bg-danger grade-badge">Gr10-12</span>
                                     <span class="badge bg-success subject-badge">Mathematics</span>
-                                    <h4 class="card-title">Mathematics Complete Guide</h4>
-                                    <p class="card-text">Comprehensive coverage of algebra, functions, trigonometry, calculus, and more.</p>
-                                    <ul class="list-unstyled">
-                                        <li><i class="bi bi-check-circle text-success"></i> 800+ practice questions</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Problem-solving strategies</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Exam walkthroughs</li>
-                                    </ul>
+                                    <h4 class="card-title">FET Phase Mathematics</h4>
+                                    <p class="card-text">Advanced mathematics including algebra, functions, trigonometry, and calculus.</p>
+                                    
+                                    <div class="accordion accordion-flush topic-accordion" id="mathsFETTopics">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mathsFETTopic1">
+                                                    Functions
+                                                </button>
+                                            </h2>
+                                            <div id="mathsFETTopic1" class="accordion-collapse collapse" data-bs-parent="#mathsFETTopics">
+                                                <div class="accordion-body">
+                                                    <p>Linear, quadratic, hyperbolic, exponential and trigonometric functions.</p>
+                                                    <div class="topic-resources">
+                                                        <span class="badge bg-success resource-badge">PDF Guide</span>
+                                                        <span class="badge bg-danger resource-badge">Worksheet</span>
+                                                        <span class="badge bg-primary resource-badge">Video Tutorial</span>
+                                                        
+                                                        <div class="video-thumbnail mt-2" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="cdef9012">
+                                                            <img src="https://img.youtube.com/vi/cdef9012/mqdefault.jpg" alt="Functions Tutorial">
+                                                            <div class="play-button">
+                                                                <i class="bi bi-play-fill"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mathsFETTopic2">
+                                                    Calculus
+                                                </button>
+                                            </h2>
+                                            <div id="mathsFETTopic2" class="accordion-collapse collapse" data-bs-parent="#mathsFETTopics">
+                                                <div class="accordion-body">
+                                                    <p>Differential and integral calculus with applications.</p>
+                                                    <div class="topic-resources">
+                                                        <span class="badge bg-success resource-badge">PDF Guide</span>
+                                                        <span class="badge bg-danger resource-badge">Worksheet</span>
+                                                        <span class="badge bg-primary resource-badge">Video Tutorial</span>
+                                                        
+                                                        <div class="video-thumbnail mt-2" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="ghij3456">
+                                                            <img src="https://img.youtube.com/vi/ghij3456/mqdefault.jpg" alt="Calculus Tutorial">
+                                                            <div class="play-button">
+                                                                <i class="bi bi-play-fill"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="card-footer bg-transparent">
-                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card guide-card h-100">
-                                <div class="card-body position-relative">
-                                    <span class="badge bg-danger grade-badge">Gr10-12</span>
-                                    <span class="badge bg-success subject-badge">Maths Literacy</span>
-                                    <h4 class="card-title">Mathematical Literacy Guide</h4>
-                                    <p class="card-text">Practical applications of mathematics in everyday life for Grades 10-12.</p>
-                                    <ul class="list-unstyled">
-                                        <li><i class="bi bi-check-circle text-success"></i> Financial calculations</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Measurement techniques</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Data handling</li>
-                                    </ul>
-                                </div>
-                                <div class="card-footer bg-transparent">
-                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
+                                    <a href="#" class="btn btn-sm btn-success">Download Full Guide</a>
                                     <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
                                 </div>
                             </div>
@@ -436,77 +530,77 @@
                     </div>
                 </div>
 
-                <!-- Sciences -->
-                <div class="subject-category">
-                    <h3>Sciences</h3>
-                    <div class="row g-4">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card guide-card h-100">
-                                <div class="card-body position-relative">
-                                    <span class="badge bg-primary grade-badge">Gr7-9</span>
-                                    <span class="badge bg-info subject-badge">Natural Science</span>
-                                    <h4 class="card-title">Natural Science Mastery</h4>
-                                    <p class="card-text">Comprehensive coverage of life & living, matter & materials, energy and Earth & beyond.</p>
-                                    <ul class="list-unstyled">
-                                        <li><i class="bi bi-check-circle text-success"></i> Scientific investigations</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Key concept summaries</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Diagrams & illustrations</li>
-                                    </ul>
-                                </div>
-                                <div class="card-footer bg-transparent">
-                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card guide-card h-100">
-                                <div class="card-body position-relative">
-                                    <span class="badge bg-danger grade-badge">Gr10-12</span>
-                                    <span class="badge bg-info subject-badge">Physical Science</span>
-                                    <h4 class="card-title">Physical Science Mastery</h4>
-                                    <p class="card-text">Comprehensive coverage of Physics and Chemistry for Grades 10-12.</p>
-                                    <ul class="list-unstyled">
-                                        <li><i class="bi bi-check-circle text-success"></i> Practical experiments</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Formula sheets</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Problem-solving techniques</li>
-                                    </ul>
-                                </div>
-                                <div class="card-footer bg-transparent">
-                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card guide-card h-100">
-                                <div class="card-body position-relative">
-                                    <span class="badge bg-danger grade-badge">Gr10-12</span>
-                                    <span class="badge bg-info subject-badge">Life Sciences</span>
-                                    <h4 class="card-title">Life Sciences Guide</h4>
-                                    <p class="card-text">Comprehensive coverage of biodiversity, cellular processes, and human physiology.</p>
-                                    <ul class="list-unstyled">
-                                        <li><i class="bi bi-check-circle text-success"></i> Diagrams & illustrations</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Key concept summaries</li>
-                                        <li><i class="bi bi-check-circle text-success"></i> Practical investigations</li>
-                                    </ul>
-                                </div>
-                                <div class="card-footer bg-transparent">
-                                    <a href="#" class="btn btn-sm btn-success">Download PDF</a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Online</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Continue with other subject categories similarly -->
+                <!-- Continue with other subjects similarly -->
                 <!-- ... -->
-
             </div>
         </div>
+
+        <!-- Video Tutorials Section -->
+        <section id="video-tutorials" class="mb-5">
+            <h2 class="mb-4 border-bottom pb-2">Featured Video Tutorials</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card guide-card h-100">
+                        <div class="card-body">
+                            <div class="video-thumbnail mb-3" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="klmn7890">
+                                <img src="https://img.youtube.com/vi/klmn7890/mqdefault.jpg" alt="Algebra Basics">
+                                <div class="play-button">
+                                    <i class="bi bi-play-fill"></i>
+                                </div>
+                            </div>
+                            <h4 class="card-title">Algebra Basics</h4>
+                            <p class="card-text">Learn the fundamentals of algebra with clear explanations and examples.</p>
+                            <div class="d-flex justify-content-between">
+                                <span class="badge bg-primary">Grade 8-10</span>
+                                <span class="badge bg-success">Mathematics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card guide-card h-100">
+                        <div class="card-body">
+                            <div class="video-thumbnail mb-3" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="opqr1234">
+                                <img src="https://img.youtube.com/vi/opqr1234/mqdefault.jpg" alt="Chemical Reactions">
+                                <div class="play-button">
+                                    <i class="bi bi-play-fill"></i>
+                                </div>
+                            </div>
+                            <h4 class="card-title">Chemical Reactions</h4>
+                            <p class="card-text">Understand different types of chemical reactions and how to balance equations.</p>
+                            <div class="d-flex justify-content-between">
+                                <span class="badge bg-danger">Grade 10-12</span>
+                                <span class="badge bg-info">Physical Science</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card guide-card h-100">
+                        <div class="card-body">
+                            <div class="video-thumbnail mb-3" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="stuv5678">
+                                <img src="https://img.youtube.com/vi/stuv5678/mqdefault.jpg" alt="Essay Writing">
+                                <div class="play-button">
+                                    <i class="bi bi-play-fill"></i>
+                                </div>
+                            </div>
+                            <h4 class="card-title">Essay Writing Techniques</h4>
+                            <p class="card-text">Master the art of essay writing for your English exams.</p>
+                            <div class="d-flex justify-content-between">
+                                <span class="badge bg-primary">Grade 7-12</span>
+                                <span class="badge bg-warning">English HL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-primary">View All Video Tutorials</a>
+            </div>
+        </section>
 
         <!-- Additional Resources -->
         <section id="additional-resources" class="mb-5">
@@ -567,6 +661,24 @@
                 </div>
             </div>
         </section>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModalLabel">Video Tutorial</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe class="modal-video" src="" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Footer -->
@@ -635,6 +747,22 @@
             // Handle direct anchor links
             if (window.location.hash === '#bySubject') {
                 document.querySelector('#bySubjectTab').click();
+            }
+
+            // Video Modal Handler
+            const videoModal = document.getElementById('videoModal');
+            if (videoModal) {
+                videoModal.addEventListener('show.bs.modal', function(event) {
+                    const button = event.relatedTarget;
+                    const videoId = button.getAttribute('data-video-id');
+                    const iframe = videoModal.querySelector('.modal-video');
+                    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                });
+
+                videoModal.addEventListener('hide.bs.modal', function() {
+                    const iframe = videoModal.querySelector('.modal-video');
+                    iframe.src = '';
+                });
             }
         });
     </script>
