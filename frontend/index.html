@@ -208,171 +208,171 @@
     <script src="/bootstrap-4.0.0/bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    
+
     <!-- Custom JavaScript to load curriculum data -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Load the curriculum data
             fetch('scripts/curriculumn.json')
                 .then(response => response.json())
                 .then(data => {
                     const gradeTabs = document.getElementById('gradeTabs');
-                    
+
                     // Create a tab for each grade
                     data.curriculum.forEach(gradeData => {
                         const grade = gradeData.grade;
-                        
+
                         // Create the dropdown list item
                         const dropdownItem = document.createElement('li');
                         dropdownItem.className = 'nav-item grade-tab dropdown mx-1 mb-2';
-                        
+
                         // Create the dropdown toggle
                         const dropdownToggle = document.createElement('a');
                         dropdownToggle.className = 'nav-link dropdown-toggle';
                         dropdownToggle.href = '#';
                         dropdownToggle.setAttribute('data-bs-toggle', 'dropdown');
                         dropdownToggle.textContent = `Grade ${grade}`;
-                        
+
                         // Create the dropdown menu
                         const dropdownMenu = document.createElement('ul');
                         dropdownMenu.className = 'dropdown-menu';
-                        
+
                         // Add subjects to the dropdown menu
                         gradeData.subjects.forEach(subject => {
                             const subjectItem = document.createElement('li');
                             const subjectLink = document.createElement('a');
                             subjectLink.className = 'dropdown-item';
-                            subjectLink.href = `grade-${grade}/${subject.name.toLowerCase().replace(/\s+/g, '-')}.html`;
+                            subjectLink.href = `past_exam/past_exam.html?grade=${grade}&subject=${encodeURIComponent(subject.name)}`;
                             subjectLink.textContent = subject.name;
                             subjectItem.appendChild(subjectLink);
                             dropdownMenu.appendChild(subjectItem);
                         });
-                        
+
                         // Add EMS for grades 8-9 (not in the JSON)
                         if (grade === 8 || grade === 9) {
                             const emsItem = document.createElement('li');
                             const emsLink = document.createElement('a');
                             emsLink.className = 'dropdown-item';
-                            emsLink.href = `grade-${grade}/ems.html`;
+                            emsLink.href = `past_exam/past_exam.html?grade=${grade}&subject=EMS`;
                             emsLink.textContent = 'EMS';
                             emsItem.appendChild(emsLink);
                             dropdownMenu.appendChild(emsItem);
                         }
-                        
+
                         // Add Creative Arts for grades 7-9 (not in the JSON)
                         if (grade >= 7 && grade <= 9) {
                             const artsItem = document.createElement('li');
                             const artsLink = document.createElement('a');
                             artsLink.className = 'dropdown-item';
-                            artsLink.href = `grade-${grade}/creative-arts.html`;
+                            artsLink.href = `past_exam/past_exam.html?grade=${grade}&subject=Creative%20Arts`;
                             artsLink.textContent = 'Creative Arts';
                             artsItem.appendChild(artsLink);
                             dropdownMenu.appendChild(artsItem);
                         }
-                        
+
                         // Add Life Orientation for grades 7-12 (not in the JSON)
                         if (grade >= 7 && grade <= 12) {
                             const loItem = document.createElement('li');
                             const loLink = document.createElement('a');
                             loLink.className = 'dropdown-item';
-                            loLink.href = `grade-${grade}/life-orientation.html`;
+                            loLink.href = `past_exam/past_exam.html?grade=${grade}&subject=Life%20Orientation`;
                             loLink.textContent = 'Life Orientation';
                             loItem.appendChild(loLink);
                             dropdownMenu.appendChild(loItem);
                         }
-                        
+
                         // Add Technology for grades 7-9 (not in the JSON)
                         if (grade >= 7 && grade <= 9) {
                             const techItem = document.createElement('li');
                             const techLink = document.createElement('a');
                             techLink.className = 'dropdown-item';
-                            techLink.href = `grade-${grade}/technology.html`;
+                            techLink.href = `past_exam/past_exam.html?grade=${grade}&subject=Technology`;
                             techLink.textContent = 'Technology';
                             techItem.appendChild(techLink);
                             dropdownMenu.appendChild(techItem);
                         }
-                        
+
                         // Add English HL for grades 7-12 (not in the JSON)
                         if (grade >= 7 && grade <= 12) {
                             const englishItem = document.createElement('li');
                             const englishLink = document.createElement('a');
                             englishLink.className = 'dropdown-item';
-                            englishLink.href = `grade-${grade}/english.html`;
+                            englishLink.href = `past_exam/past_exam.html?grade=${grade}&subject=English%20Home%20Language`;
                             englishLink.textContent = 'English Home Language';
                             englishItem.appendChild(englishLink);
                             dropdownMenu.appendChild(englishItem);
                         }
-                        
+
                         // Add Afrikaans FAL for grades 7-12 (not in the JSON)
                         if (grade >= 7 && grade <= 12) {
                             const afrikaansItem = document.createElement('li');
                             const afrikaansLink = document.createElement('a');
                             afrikaansLink.className = 'dropdown-item';
-                            afrikaansLink.href = `grade-${grade}/afrikaans-fal.html`;
+                            afrikaansLink.href = `past_exam/past_exam.html?grade=${grade}&subject=Afrikaans%20FAL`;
                             afrikaansLink.textContent = 'Afrikaans FAL';
                             afrikaansItem.appendChild(afrikaansLink);
                             dropdownMenu.appendChild(afrikaansItem);
                         }
-                        
+
                         // Add Maths Literacy for grades 10-12 (not in the JSON)
                         if (grade >= 10 && grade <= 12) {
                             const mathsLitItem = document.createElement('li');
                             const mathsLitLink = document.createElement('a');
                             mathsLitLink.className = 'dropdown-item';
-                            mathsLitLink.href = `grade-${grade}/maths-literacy.html`;
+                            mathsLitLink.href = `past_exam/past_exam.html?grade=${grade}&subject=Maths%20Literacy`;
                             mathsLitLink.textContent = 'Maths Literacy';
                             mathsLitItem.appendChild(mathsLitLink);
                             dropdownMenu.appendChild(mathsLitItem);
                         }
-                        
+
                         // Add Business Studies for grades 10-12 (not in the JSON)
                         if (grade >= 10 && grade <= 12) {
                             const businessItem = document.createElement('li');
                             const businessLink = document.createElement('a');
                             businessLink.className = 'dropdown-item';
-                            businessLink.href = `grade-${grade}/business-studies.html`;
+                            businessLink.href = `past_exam/past_exam.html?grade=${grade}&subject=Business%20Studies`;
                             businessLink.textContent = 'Business Studies';
                             businessItem.appendChild(businessLink);
                             dropdownMenu.appendChild(businessItem);
                         }
-                        
+
                         // Add Accounting for grades 10-12 (not in the JSON)
                         if (grade >= 10 && grade <= 12) {
                             const accountingItem = document.createElement('li');
                             const accountingLink = document.createElement('a');
                             accountingLink.className = 'dropdown-item';
-                            accountingLink.href = `grade-${grade}/accounting.html`;
+                            accountingLink.href = `past_exam/past_exam.html?grade=${grade}&subject=Accounting`;
                             accountingLink.textContent = 'Accounting';
                             accountingItem.appendChild(accountingLink);
                             dropdownMenu.appendChild(accountingItem);
                         }
-                        
+
                         // Add Economics for grades 10-12 (not in the JSON)
                         if (grade >= 10 && grade <= 12) {
                             const economicsItem = document.createElement('li');
                             const economicsLink = document.createElement('a');
                             economicsLink.className = 'dropdown-item';
-                            economicsLink.href = `grade-${grade}/economics.html`;
+                            economicsLink.href = `past_exam/past_exam.html?grade=${grade}&subject=Economics`;
                             economicsLink.textContent = 'Economics';
                             economicsItem.appendChild(economicsLink);
                             dropdownMenu.appendChild(economicsItem);
                         }
-                        
+
                         // Add CAT for grades 10-12 (not in the JSON)
                         if (grade >= 10 && grade <= 12) {
                             const catItem = document.createElement('li');
                             const catLink = document.createElement('a');
                             catLink.className = 'dropdown-item';
-                            catLink.href = `grade-${grade}/cat.html`;
+                            catLink.href = `past_exam/past_exam.html?grade=${grade}&subject=CAT`;
                             catLink.textContent = 'CAT';
                             catItem.appendChild(catLink);
                             dropdownMenu.appendChild(catItem);
                         }
-                        
+
                         // Assemble the dropdown
                         dropdownItem.appendChild(dropdownToggle);
                         dropdownItem.appendChild(dropdownMenu);
-                        
+
                         // Add to the grade tabs
                         gradeTabs.appendChild(dropdownItem);
                     });
@@ -381,8 +381,8 @@
                     console.error('Error loading curriculum data:', error);
                     // Fallback to hardcoded tabs if JSON fails to load
                     document.getElementById('gradeTabs').innerHTML = `
-                        <!-- Original hardcoded grade tabs would go here as fallback -->
-                    `;
+                <!-- Original hardcoded grade tabs would go here as fallback -->
+            `;
                 });
         });
     </script>
