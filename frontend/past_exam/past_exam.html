@@ -52,7 +52,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <a class="navbar-brand" href="../index.html">
-        <i class="fas fa-calculator me-2"></i>SA Past Exams
+        <i class="fas fa-calculator me-2"></i>MiltonTutor+
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
@@ -97,7 +97,7 @@
         </div>
         <div class="card-body">
           <div class="row">
-            <div class="col-md-12" id="exam-container">
+            <div class="col-md-6" id="exam-container">
               <!-- Exam content will be injected here by JavaScript -->
             </div>
           </div>
@@ -297,7 +297,7 @@
           const yearData = years[year];
           const paperItems = yearData.papers.map((p, i) => {
             const memo = yearData.memos[i];
-            return `<li class="list-group-item d-flex justify-content-between align-items-center col-md-4">
+            return `<li class="list-group-item d-flex justify-content-between align-items-center">
                       ${year} ${p.paper}
                       <span>
                         <a href="${p.url}" target="_blank" class="btn btn-sm btn-outline-primary">Paper</a>
@@ -306,7 +306,7 @@
                     </li>`;
           }).join('');
 
-          const yearBlock = `<div class="exam-year mb-4">
+          const yearBlock = `<div class="exam-year mb-4 col-md-6">
                               <h4>${year}</h4>
                               <ul class="list-group">${paperItems}</ul>
                             </div>`;
