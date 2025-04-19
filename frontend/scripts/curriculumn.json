@@ -1,0 +1,397 @@
+{
+  "curriculum": [
+    {
+      "grade": 7,
+      "subjects": [
+        {
+          "name": "Mathematics",
+          "studyGuide": "Grade 7 Maths Study Guide",
+          "topics": [
+            "Whole Numbers",
+            "Integers",
+            "Fractions",
+            "Decimals",
+            "Percentages",
+            "Algebraic Expressions",
+            "Equations",
+            "Patterns and Sequences",
+            "Functions and Relationships",
+            "Measurement",
+            "Geometry",
+            "Data Handling"
+          ]
+        },
+        {
+          "name": "Natural Sciences",
+          "studyGuide": "Grade 7 Natural Sciences Study Guide",
+          "topics": [
+            "Photosynthesis",
+            "Human Reproduction",
+            "Mixtures",
+            "Acids, Bases and Neutrals",
+            "Energy and Change",
+            "Electric Circuits",
+            "Planet Earth and Beyond"
+          ]
+        },
+        {
+          "name": "Social Sciences",
+          "studyGuide": "Grade 7 Social Sciences Study Guide",
+          "topics": [
+            "Map Skills",
+            "Settlement",
+            "Early Societies",
+            "Kingdoms of Africa",
+            "Climate and Vegetation"
+          ]
+        },
+        {
+          "name": "Technology",
+          "studyGuide": "Grade 7 Technology Study Guide",
+          "topics": [
+            "Structures",
+            "Processing",
+            "Electrical Systems and Control",
+            "Mechanical Systems and Control",
+            "Design Process"
+          ]
+        }
+      ]
+    },
+    {
+      "grade": 8,
+      "subjects": [
+        {
+          "name": "Mathematics",
+          "studyGuide": "Grade 8 Maths Study Guide",
+          "topics": [
+            "Whole Numbers and Integers",
+            "Rational Numbers",
+            "Algebraic Expressions",
+            "Equations",
+            "Functions and Graphs",
+            "Measurement",
+            "Transformation Geometry",
+            "Data Handling and Probability"
+          ]
+        },
+        {
+          "name": "Natural Sciences",
+          "studyGuide": "Grade 8 Natural Sciences Study Guide",
+          "topics": [
+            "Cells as Basic Units of Life",
+            "Human Systems",
+            "Atoms and Elements",
+            "Chemical Reactions",
+            "Energy Transfer",
+            "Sound and Light",
+            "Solar System"
+          ]
+        },
+        {
+          "name": "Social Sciences",
+          "studyGuide": "Grade 8 Social Sciences Study Guide",
+          "topics": [
+            "Industrial Revolution",
+            "Scramble for Africa",
+            "World War I",
+            "Geography of Development",
+            "Climate Regions"
+          ]
+        },
+        {
+          "name": "Technology",
+          "studyGuide": "Grade 8 Technology Study Guide",
+          "topics": [
+            "Structures and Forces",
+            "Processing Materials",
+            "Electronic Systems",
+            "Mechanical Advantage",
+            "Impact of Technology"
+          ]
+        }
+      ]
+    },
+    {
+      "grade": 9,
+      "subjects": [
+        {
+          "name": "Mathematics",
+          "studyGuide": "Grade 9 Maths Study Guide",
+          "topics": [
+            "Number Systems",
+            "Exponents",
+            "Algebraic Equations",
+            "Graphs",
+            "Geometry of 2D Shapes",
+            "Geometry of 3D Objects",
+            "Surface Area and Volume",
+            "Probability",
+            "Data Handling"
+          ]
+        },
+        {
+          "name": "Natural Sciences",
+          "studyGuide": "Grade 9 Natural Sciences Study Guide",
+          "topics": [
+            "Human Circulatory System",
+            "Respiratory System",
+            "Digestive System",
+            "Compounds and Chemical Bonding",
+            "Reactions in Aqueous Solutions",
+            "Forces",
+            "Electricity and Magnetism",
+            "The Universe"
+          ]
+        },
+        {
+          "name": "Social Sciences",
+          "studyGuide": "Grade 9 Social Sciences Study Guide",
+          "topics": [
+            "World War II",
+            "Cold War",
+            "Apartheid in South Africa",
+            "Population Growth",
+            "Development Issues",
+            "Mapwork Skills"
+          ]
+        },
+        {
+          "name": "Technology",
+          "studyGuide": "Grade 9 Technology Study Guide",
+          "topics": [
+            "Graphic Communication",
+            "Mechanical Systems",
+            "Electronic Control Systems",
+            "Processing Materials",
+            "Sustainable Technology"
+          ]
+        }
+      ]
+    },
+    {
+      "grade": 10,
+      "subjects": [
+        {
+          "name": "Mathematics",
+          "studyGuide": "Grade 10 Maths Study Guide",
+          "topics": [
+            "Algebraic Expressions",
+            "Equations and Inequalities",
+            "Number Patterns",
+            "Functions",
+            "Trigonometry",
+            "Euclidean Geometry",
+            "Analytical Geometry",
+            "Statistics",
+            "Probability",
+            "Finance and Growth"
+          ]
+        },
+        {
+          "name": "Physical Sciences",
+          "studyGuide": "Grade 10 Physical Sciences Study Guide",
+          "topics": [
+            "Matter and Materials",
+            "States of Matter",
+            "Atomic Structure",
+            "Periodic Table",
+            "Chemical Bonding",
+            "Reactions in Aqueous Solutions",
+            "Mechanics",
+            "Waves, Sound and Light",
+            "Electricity and Magnetism"
+          ]
+        },
+        {
+          "name": "Life Sciences",
+          "studyGuide": "Grade 10 Life Sciences Study Guide",
+          "topics": [
+            "Biochemistry of Life",
+            "Cell Structure and Function",
+            "Cell Division",
+            "Plant and Animal Tissues",
+            "Support and Transport in Plants",
+            "Support Systems in Animals",
+            "Transport Systems in Animals"
+          ]
+        },
+        {
+          "name": "Geography",
+          "studyGuide": "Grade 10 Geography Study Guide",
+          "topics": [
+            "Atmosphere",
+            "Geomorphology",
+            "Population",
+            "Water Resources",
+            "Climate and Weather",
+            "Rocks and Landforms",
+            "Mapwork Skills"
+          ]
+        },
+        {
+          "name": "History",
+          "studyGuide": "Grade 10 History Study Guide",
+          "topics": [
+            "World Around 1600",
+            "Expansion and Conquest",
+            "French Revolution",
+            "Industrial Revolution",
+            "Colonial Expansion",
+            "South African War"
+          ]
+        }
+      ]
+    },
+    {
+      "grade": 11,
+      "subjects": [
+        {
+          "name": "Mathematics",
+          "studyGuide": "Grade 11 Maths Study Guide",
+          "topics": [
+            "Exponents and Surds",
+            "Equations and Inequalities",
+            "Number Patterns",
+            "Analytical Geometry",
+            "Functions",
+            "Trigonometry",
+            "Measurement",
+            "Euclidean Geometry",
+            "Statistics",
+            "Probability",
+            "Finance, Growth and Decay"
+          ]
+        },
+        {
+          "name": "Physical Sciences",
+          "studyGuide": "Grade 11 Physical Sciences Study Guide",
+          "topics": [
+            "Vectors and Scalars",
+            "Motion in One Dimension",
+            "Newton's Laws",
+            "Atomic Combinations",
+            "Intermolecular Forces",
+            "Chemical Change",
+            "Energy and Chemical Change",
+            "Electric Circuits",
+            "Electrodynamics"
+          ]
+        },
+        {
+          "name": "Life Sciences",
+          "studyGuide": "Grade 11 Life Sciences Study Guide",
+          "topics": [
+            "Biodiversity",
+            "Classification",
+            "History of Life on Earth",
+            "Photosynthesis",
+            "Respiration",
+            "Animal Nutrition",
+            "Gaseous Exchange",
+            "Excretion"
+          ]
+        },
+        {
+          "name": "Geography",
+          "studyGuide": "Grade 11 Geography Study Guide",
+          "topics": [
+            "Atmosphere",
+            "Geomorphology",
+            "Development Geography",
+            "Resources and Sustainability",
+            "Climate Change",
+            "Rural and Urban Settlement"
+          ]
+        },
+        {
+          "name": "History",
+          "studyGuide": "Grade 11 History Study Guide",
+          "topics": [
+            "Communism in Russia",
+            "Capitalism in USA",
+            "Apartheid in South Africa",
+            "Civil Rights Movement",
+            "Cold War",
+            "Independent Africa"
+          ]
+        }
+      ]
+    },
+    {
+      "grade": 12,
+      "subjects": [
+        {
+          "name": "Mathematics",
+          "studyGuide": "Grade 12 Maths Study Guide",
+          "topics": [
+            "Sequences and Series",
+            "Functions",
+            "Finance, Growth and Decay",
+            "Algebra",
+            "Differential Calculus",
+            "Probability",
+            "Euclidean Geometry",
+            "Analytical Geometry",
+            "Trigonometry",
+            "Statistics"
+          ]
+        },
+        {
+          "name": "Physical Sciences",
+          "studyGuide": "Grade 12 Physical Sciences Study Guide",
+          "topics": [
+            "Momentum and Impulse",
+            "Work, Energy and Power",
+            "Doppler Effect",
+            "Electrostatics",
+            "Electric Circuits",
+            "Electromagnetism",
+            "Organic Chemistry",
+            "Chemical Equilibrium",
+            "Acids and Bases",
+            "Electrochemistry"
+          ]
+        },
+        {
+          "name": "Life Sciences",
+          "studyGuide": "Grade 12 Life Sciences Study Guide",
+          "topics": [
+            "DNA and Protein Synthesis",
+            "Meiosis",
+            "Genetics and Inheritance",
+            "Evolution",
+            "Human Reproduction",
+            "Endocrine System",
+            "Homeostasis",
+            "Human Impact on Environment"
+          ]
+        },
+        {
+          "name": "Geography",
+          "studyGuide": "Grade 12 Geography Study Guide",
+          "topics": [
+            "Climate and Weather",
+            "Geomorphology",
+            "Settlement Geography",
+            "Economic Geography",
+            "Mapwork Skills",
+            "GIS"
+          ]
+        },
+        {
+          "name": "History",
+          "studyGuide": "Grade 12 History Study Guide",
+          "topics": [
+            "Cold War",
+            "Independent Africa",
+            "Civil Society Protests",
+            "Coming of Democracy in SA",
+            "Truth and Reconciliation",
+            "Globalisation"
+          ]
+        }
+      ]
+    }
+  ]
+}
