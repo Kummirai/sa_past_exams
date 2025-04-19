@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade 8 Mathematics - Whole Numbers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles/study-guide.css">
+    <style>
+        .section-title {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-left: 5px solid #0d6efd;
+            margin-top: 20px;
+        }
+
+        .exercise {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .answer-input {
+            margin-bottom: 10px;
+        }
+
+        .feedback {
+            display: none;
+            margin-top: 5px;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        .correct {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .hint {
+            color: #6c757d;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        .nav-tabs {
+            margin-bottom: 20px;
+        }
+
+        .copyright-notice {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .topic-selector {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--sa-green);">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">MiltonTutor+</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="browse.html">Past Papers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../../study-guides.html">Study Guides</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <a href="login.html" class="btn btn-outline-warning">Login</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center">MATHEMATICS</h1>
+                <h2 class="text-center">Grade 8</h2>
+                
+                <!-- Topic Selector Dropdown -->
+                <div class="topic-selector">
+                    <label for="topicSelect" class="form-label"><strong>Select a Topic:</strong></label>
+                    <select class="form-select" id="topicSelect" onchange="switchTopic()">
+                        <option value="whole_numbers.html" selected>Whole Numbers</option>
+                        <option value="integers.html">Integers</option>
+                        <option value="exponents.html">Exponents</option>
+                        <option value="numeric_and_geometric_patterns.html">Numeric and Geometric Patterns</option>
+                        <option value="functions_and_relationships.html">Functions and Relationships</option>
+                        <option value="algebraic_expressions.html">Algebraic Expressions</option>
+                        <option value="algebraic_equations.html">Algebraic Equations</option>
+                        <option value="geometry.html">Geometry</option>
+                        <option value="common_fractions.html">Common Fractions</option>
+                        <option value="decimal_fractions.html">Decimal Fractions</option>
+                        <option value="theorems.html">Theorems</option>
+                        <option value="area_and_perimeter.html">Area and Perimeter</option>
+                        <option value="surface_area_and_volume.html">Surface Area and Volume</option>
+                        <option value="collect_organise_summarise_data.html">Collect, Organise and Summarise Data</option>
+                        <option value="represent_data.html">Represent Data</option>
+                        <option value="interpret_analyse_data.html">Interpret and Analyse Data</option>
+                        <option value="probability.html">Probability</option>
+                    </select>
+                </div>
+                
+                <h3 class="text-center" id="currentTopic">Whole Numbers</h3>
+                <hr>
+
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="properties-tab" data-bs-toggle="tab"
+                            data-bs-target="#properties" type="button" role="tab">1.1 Properties</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="calculations-tab" data-bs-toggle="tab"
+                            data-bs-target="#calculations" type="button" role="tab">1.2 Calculations</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="factors-tab" data-bs-toggle="tab" data-bs-target="#factors"
+                            type="button" role="tab">1.3 Factors</button>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="myTabContent">
+                    <!-- Properties Tab -->
+                    <div class="tab-pane fade show active" id="properties" role="tabpanel">
+                        <h3 class="section-title">1.1 Properties of Whole Numbers</h3>
+
+                        <div class="exercise">
+                            <h5>The commutative property of addition and multiplication</h5>
+                            <p>1. Which of the following calculations would you choose to calculate the number of yellow
+                                beads in this pattern? Do not do any calculations now, just make a choice.</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q1" id="q1a" value="a">
+                                <label class="form-check-label" for="q1a">(a) 7 + 7 + 7 + 7 + 7</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q1" id="q1b" value="b">
+                                <label class="form-check-label" for="q1b">(b) 10 + 10 + 10 + 10 + 10 + 10 + 10</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q1" id="q1c" value="c">
+                                <label class="form-check-label" for="q1c">(c) 5 + 5 + 5 + 5 + 5 + 5 + 5 + 5 + 5 +
+                                    5</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q1" id="q1d" value="d">
+                                <label class="form-check-label" for="q1d">(d) 5 + 5 + 5 + 5 + 5 + 5 + 5</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q1" id="q1e" value="e">
+                                <label class="form-check-label" for="q1e">(e) 7 + 7 + 7 + 7 + 7 + 7 + 7 + 7 + 7 +
+                                    7</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q1" id="q1f" value="f">
+                                <label class="form-check-label" for="q1f">(f) 10 + 10 + 10 + 10 + 10</label>
+                            </div>
+                            <button class="btn btn-primary mt-2" onclick="checkAnswer('q1', 'd')">Check Answer</button>
+                            <div id="q1-feedback" class="feedback"></div>
+                            <div class="hint">Hint: Count the number of yellow beads in the pattern.</div>
+                        </div>
+
+                        <div class="exercise">
+                            <p>2. (a) How many red beads are there in the pattern, and how many yellow beads?</p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="q2a-red" class="form-label">Red beads:</label>
+                                    <input type="number" class="form-control answer-input" id="q2a-red">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="q2a-yellow" class="form-label">Yellow beads:</label>
+                                    <input type="number" class="form-control answer-input" id="q2a-yellow">
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-2" onclick="checkAnswer2('q2a', 70, 50)">Check
+                                Answer</button>
+                            <div id="q2a-feedback" class="feedback"></div>
+
+                            <p class="mt-3">(b) How many beads are there in the pattern in total?</p>
+                            <input type="number" class="form-control answer-input" id="q2b">
+                            <button class="btn btn-primary mt-2" onclick="checkAnswer('q2b', 120)">Check Answer</button>
+                            <div id="q2b-feedback" class="feedback"></div>
+                        </div>
+
+                        <div class="exercise">
+                            <h5>The associative property of addition and multiplication</h5>
+                            <p>Lebogang and Nathi both have to calculate 25 × 24.</p>
+                            <p>Lebogang calculates 25 × 4 and then multiplies by 6.</p>
+                            <p>Nathi calculates 25 × 6 and then multiplies by 4.</p>
+                            <p>1. Will they get the same answer or not?</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q3" id="q3a" value="a">
+                                <label class="form-check-label" for="q3a">Yes, they will get the same answer</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q3" id="q3b" value="b">
+                                <label class="form-check-label" for="q3b">No, they will get different answers</label>
+                            </div>
+                            <button class="btn btn-primary mt-2" onclick="checkAnswer('q3', 'a')">Check Answer</button>
+                            <div id="q3-feedback" class="feedback"></div>
+                        </div>
+
+                        <div class="exercise">
+                            <h5>More conventions and the distributive property</h5>
+                            <p>1. Here are some calculations with answers. Rewrite them with brackets to make all the
+                                answers correct.</p>
+                            <p>(a) 8 + 6 × 5 = 70</p>
+                            <input type="text" class="form-control answer-input" id="q4a"
+                                placeholder="Enter with brackets">
+                            <button class="btn btn-primary mt-2" onclick="checkAnswer('q4a', '(8 + 6) × 5')">Check
+                                Answer</button>
+                            <div id="q4a-feedback" class="feedback"></div>
+
+                            <p class="mt-3">(b) 8 + 6 × 5 = 38</p>
+                            <input type="text" class="form-control answer-input" id="q4b"
+                                placeholder="Enter with brackets">
+                            <button class="btn btn-primary mt-2" onclick="checkAnswer('q4b', '8 + (6 × 5)')">Check
+                                Answer</button>
+                            <div id="q4b-feedback" class="feedback"></div>
+                        </div>
+                    </div>
+
+                    <!-- Calculations Tab -->
+                    <div class="tab-pane fade" id="calculations" role="tabpanel">
+                        <h3 class="section-title">1.2 Calculations with Whole Numbers</h3>
+
+                        <div class="exercise">
+                            <h5>Estimating, approximating and rounding</h5>
+                            <p>1. Try to give answers that you trust to these questions, without doing any calculations
+                                with the given numbers.</p>
+                            <p>(a) Is 8 × 117 more than 2,000 or less than 2,000?</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q5a" id="q5a-more" value="more">
+                                <label class="form-check-label" for="q5a-more">More than 2,000</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q5a" id="q5a-less" value="less">
+                                <label class="form-check-label" for="q5a-less">Less than 2,000</label>
+                            </div>
+                            <button class="btn btn-primary mt-2" onclick="checkAnswer('q5a', 'less')">Check
+                                Answer</button>
+                            <div id="q5a-feedback" class="feedback"></div>
+
+                            <p class="mt-3">(b) Is 27 × 88 more than 3,000 or less than 3,000?</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q5b" id="q5b-more" value="more">
+                                <label class="form-check-label" for="q5b-more">More than 3,000</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q5b" id="q5b-less" value="less">
+                                <label class="form-check-label" for="q5b-less">Less than 3,000</label>
+                            </div>
+                            <button class="btn btn-primary mt-2" onclick="checkAnswer('q5b', 'less')">Check
+                                Answer</button>
+                            <div id="q5b-feedback" class="feedback"></div>
+                        </div>
+
+                        <div class="exercise">
+                            <h5>Adding numbers in parts written in columns</h5>
+                            <p>1. Calculate each of the following without using a calculator:</p>
+                            <p>(a) 4,638 + 2,667</p>
+                            <input type="number" class="form-control answer-input" id="q6a">
+                            <button class="btn btn-primary mt-2" onclick="checkAnswer('q6a', 7305)">Check
+                                Answer</button>
+                            <div id="q6a-feedback" class="feedback"></div>
+
+                            <p class="mt-3">(b) 748 + 7,246</p>
+                            <input type="number" class="form-control answer-input" id="q6b">
+                            <button class="btn btn-primary mt-2" onclick="checkAnswer('q6b', 7994)">Check
+                                Answer</button>
+                            <div id="q6b-feedback" class="feedback"></div>
+                        </div>
+
+                        <div class="exercise">
+                            <h5>Methods of subtraction</h5>
+                            <p>1. Calculate 33 + 500 + 59 to find the answer for 859 - 267.</p>
+                            <input type="number" class="form-control answer-input" id="q7">
+                            <button class="btn btn-primary mt-2" onclick="checkAnswer('q7', 592)">Check Answer</button>
+                            <div id="q7-feedback" class="feedback"></div>
+
+                            <p class="mt-3">2. Calculate each of the following. You may think of working out the
+                                distance between the two numbers as shown above, or use any other method you prefer.</p>
+                            <p>(a) 823 - 456</p>
+                            <input type="number" class="form-control answer-input" id="q8a">
+                            <button class="btn btn-primary mt-2" onclick="checkAnswer('q8a', 367)">Check Answer</button>
+                            <div id="q8a-feedback" class="feedback"></div>
+
+                            <p class="mt-3">(b) 1,714 - 829</p>
+                            <input type="number" class="form-control answer-input" id="q8b">
+                            <button class="btn btn-primary mt-2" onclick="checkAnswer('q8b', 885)">Check Answer</button>
+                            <div id="q8b-feedback" class="feedback"></div>
+                        </div>
+                    </div>
+
+                    <!-- Factors Tab -->
+                    <div class="tab-pane fade" id="factors" role="tabpanel">
+                        <h3 class="section-title">1.3 Multiples, Factors and Prime Factors</h3>
+
+                        <div class="exercise">
+                            <h5>Multiples and factors</h5>
+                            <p>1. The numbers 6; 12; 18; 24; ... are multiples of 6.</p>
+                            <p>The numbers 7; 14; 21; 28; ... are multiples of 7.</p>
+                            <p>(a) What is the 100th number in each sequence above?</p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="q9a-multiples6" class="form-label">Multiples of 6:</label>
+                                    <input type="number" class="form-control answer-input" id="q9a-multiples6">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="q9a-multiples7" class="form-label">Multiples of 7:</label>
+                                    <input type="number" class="form-control answer-input" id="q9a-multiples7">
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-2" onclick="checkAnswer2('q9a', 600, 700)">Check
+                                Answer</button>
+                            <div id="q9a-feedback" class="feedback"></div>
+
+                            <p class="mt-3">(b) Is 198 a number in the first sequence?</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q9b" id="q9b-yes" value="yes">
+                                <label class="form-check-label" for="q9b-yes">Yes</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q9b" id="q9b-no" value="no">
+                                <label class="form-check-label" for="q9b-no">No</label>
+                            </div>
+                            <button class="btn btn-primary mt-2" onclick="checkAnswer('q9b', 'yes')">Check
+                                Answer</button>
+                            <div id="q9b-feedback" class="feedback"></div>
+
+                            <p class="mt-3">(c) Is 175 a number in the second sequence?</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q9c" id="q9c-yes" value="yes">
+                                <label class="form-check-label" for="q9c-yes">Yes</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q9c" id="q9c-no" value="no">
+                                <label class="form-check-label" for="q9c-no">No</label>
+                            </div>
+                            <button class="btn btn-primary mt-2" onclick="checkAnswer('q9c', 'yes')">Check
+                                Answer</button>
+                            <div id="q9c-feedback" class="feedback"></div>
+                        </div>
+
+                        <div class="exercise">
+                            <h5>Prime numbers and composite numbers</h5>
+                            <p>1. Express each of the following numbers as a product of as many factors as possible,
+                                including repeated factors. Do not use 1 as a factor.</p>
+                            <p>(a) 66</p>
+                            <input type="text" class="form-control answer-input" id="q10a"
+                                placeholder="e.g., 2 × 3 × 11">
+                            <button class="btn btn-primary mt-2" onclick="checkAnswer('q10a', '2 × 3 × 11')">Check
+                                Answer</button>
+                            <div id="q10a-feedback" class="feedback"></div>
+
+                            <p class="mt-3">(b) 67</p>
+                            <input type="text" class="form-control answer-input" id="q10b" placeholder="Enter factors">
+                            <button class="btn btn-primary mt-2" onclick="checkAnswer('q10b', '67')">Check
+                                Answer</button>
+                            <div id="q10b-feedback" class="feedback"></div>
+                        </div>
+
+                        <div class="exercise">
+                            <h5>Prime factorisation</h5>
+                            <p>1. Express the following numbers as the product of powers of primes:</p>
+                            <p>(a) 792</p>
+                            <input type="text" class="form-control answer-input" id="q11a"
+                                placeholder="e.g., 2³ × 3² × 5">
+                            <button class="btn btn-primary mt-2" onclick="checkAnswer('q11a', '2³ × 3² × 11')">Check
+                                Answer</button>
+                            <div id="q11a-feedback" class="feedback"></div>
+
+                            <p class="mt-3">(b) 444</p>
+                            <input type="text" class="form-control answer-input" id="q11b"
+                                placeholder="e.g., 2³ × 3² × 5">
+                            <button class="btn btn-primary mt-2" onclick="checkAnswer('q11b', '2² × 3 × 37')">Check
+                                Answer</button>
+                            <div id="q11b-feedback" class="feedback"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Answer validation functions
+        function checkAnswer(questionId, correctAnswer) {
+            const element = document.getElementById(questionId);
+            let userAnswer;
+            
+            if (element.type === 'radio') {
+                const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+                userAnswer = selectedOption ? selectedOption.value : null;
+            } else {
+                userAnswer = element.type === 'number' ? parseInt(element.value) : element.value.trim();
+            }
+            
+            const feedbackElement = document.getElementById(`${questionId}-feedback`);
+            
+            if (userAnswer == correctAnswer) {
+                feedbackElement.textContent = 'Correct! Well done.';
+                feedbackElement.className = 'feedback correct';
+            } else {
+                feedbackElement.textContent = 'Incorrect. Try again.';
+                feedbackElement.className = 'feedback incorrect';
+            }
+            feedbackElement.style.display = 'block';
+        }
+
+        function checkAnswer2(questionId, correctAnswer1, correctAnswer2) {
+            const answer1 = parseInt(document.getElementById(`${questionId}-multiples6`).value);
+            const answer2 = parseInt(document.getElementById(`${questionId}-multiples7`).value);
+            const feedbackElement = document.getElementById(`${questionId}-feedback`);
+            
+            if (answer1 === correctAnswer1 && answer2 === correctAnswer2) {
+                feedbackElement.textContent = 'Correct! Well done.';
+                feedbackElement.className = 'feedback correct';
+            } else {
+                feedbackElement.textContent = 'Incorrect. Try again.';
+                feedbackElement.className = 'feedback incorrect';
+            }
+            feedbackElement.style.display = 'block';
+        }
+
+        // Topic switching function
+        function switchTopic() {
+            const topicSelect = document.getElementById('topicSelect');
+            const selectedTopic = topicSelect.value;
+            const topicName = topicSelect.options[topicSelect.selectedIndex].text;
+            
+            // Update the current topic title
+            document.getElementById('currentTopic').textContent = topicName;
+            
+            // In a real implementation, this would load the new topic content
+            // For now, we'll just show an alert
+            alert(`Loading ${topicName} content...`);
+            // window.location.href = selectedTopic; // Uncomment this in actual implementation
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Any initialization code can go here
+        });
+    </script>
+</body>
+
+</html>
